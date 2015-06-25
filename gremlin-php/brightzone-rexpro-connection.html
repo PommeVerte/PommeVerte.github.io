@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/9ae48036/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/576cbcdb/style.css" rel="stylesheet">
+<script src="./assets/1ec0a27c/jquery.js"></script>
+<script src="./assets/9ae48036/js/bootstrap.js"></script>
+<script src="./assets/9b89cdb5/jssearch.js"></script>    <title>Connection, brightzone\rexpro\Connection - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w14" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w14-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w14-collapse" class="collapse navbar-collapse"><ul id="w15" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-12" data-toggle="collapse" data-parent="#navigation">brightzone\rexpro <b class="caret"></b></a><div id="navigation-12" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./brightzone-rexpro-connection.html">Connection</a>
+<a class="list-group-item" href="./brightzone-rexpro-helper.html">Helper</a>
+<a class="list-group-item" href="./brightzone-rexpro-internalexception.html">InternalException</a>
+<a class="list-group-item" href="./brightzone-rexpro-messages.html">Messages</a>
+<a class="list-group-item" href="./brightzone-rexpro-serverexception.html">ServerException</a></div>
+<a class="list-group-item" href="#navigation-13" data-toggle="collapse" data-parent="#navigation">brightzone\rexpro\serializers <b class="caret"></b></a><div id="navigation-13" class="submenu panel-collapse collapse"><a class="list-group-item" href="./brightzone-rexpro-serializers-json.html">Json</a>
+<a class="list-group-item" href="./brightzone-rexpro-serializers-msgpack.html">Msgpack</a>
+<a class="list-group-item" href="./brightzone-rexpro-serializers-serializerinterface.html">SerializerInterface</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class brightzone\rexpro\Connection</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td></tr>
+                                        </table>
+
+<div class="class-description">
+    <p><strong>Gremlin-server PHP Driver client Connection class</strong></p>
+    <p>Example of basic use:</p>
+<pre><code>$connection = new Connection;
+$connection-&gt;open('localhost:8182','g');
+$resultSet = $connection-&gt;send('g.V'); //returns array with results
+</code></pre>
+<p>Some more customising of message to send can be done with the message object</p>
+<pre><code>$connection = new Connection;
+$connection-&gt;open('localhost:8182','g');
+$connection-&gt;message-&gt;gremlin = 'g.V';
+$connection-&gt;send();
+</code></pre>
+<p>See Messages for more details</p>
+
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$bindings">
+        <td><a href="brightzone-rexpro-connection.html#$bindings-detail">$bindings</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Bindings for the gremlin script</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="$graphObj">
+        <td><a href="brightzone-rexpro-connection.html#$graphObj-detail">$graphObj</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The graphObject to use.</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="$host">
+        <td><a href="brightzone-rexpro-connection.html#$host-detail">$host</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Contains the host information required to connect to the database.</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="$message">
+        <td><a href="brightzone-rexpro-connection.html#$message-detail">$message</a></td>
+        <td><a href="brightzone-rexpro-messages.html">brightzone\rexpro\Messages</a></td>
+        <td>Message object</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="$password">
+        <td><a href="brightzone-rexpro-connection.html#$password-detail">$password</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The password for establishing DB connection.</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="$timeout">
+        <td><a href="brightzone-rexpro-connection.html#$timeout-detail">$timeout</a></td>
+        <td><a href="http://www.php.net/language.types.float">float</a></td>
+        <td>Timeout to use for connection to Rexster.</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="$username">
+        <td><a href="brightzone-rexpro-connection.html#$username-detail">$username</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The username for establishing DB connection.</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="__construct()">
+        <td><a href="brightzone-rexpro-connection.html#__construct()-detail">__construct()</a></td>
+        <td>Overloading constructor to instantiate a Messages instance and
+provide it with a default serializer.</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="__destroy()">
+        <td><a href="brightzone-rexpro-connection.html#__destroy()-detail">__destroy()</a></td>
+        <td>Make sure the session is closed on destruction of the object</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="close()">
+        <td><a href="brightzone-rexpro-connection.html#close()-detail">close()</a></td>
+        <td>Close connection to server
+This closes the current session on the server then closes the socket</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="getSession()">
+        <td><a href="brightzone-rexpro-connection.html#getSession()-detail">getSession()</a></td>
+        <td>Retrieve the current session UUID</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="inTransaction()">
+        <td><a href="brightzone-rexpro-connection.html#inTransaction()-detail">inTransaction()</a></td>
+        <td>Return whether or not this cnnection object is in transaction mode</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="isConnected()">
+        <td><a href="brightzone-rexpro-connection.html#isConnected()-detail">isConnected()</a></td>
+        <td>Checks if the socket is currently open</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+                <tr id="open()">
+        <td><a href="brightzone-rexpro-connection.html#open()-detail">open()</a></td>
+        <td>Connects to socket and starts a session with gremlin-server</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="send()">
+        <td><a href="brightzone-rexpro-connection.html#send()-detail">send()</a></td>
+        <td>Constructs and sends a Messages entity or gremlin script to the server.</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+                <tr id="transactionStart()">
+        <td><a href="brightzone-rexpro-connection.html#transactionStart()-detail">transactionStart()</a></td>
+        <td>Start a transaction.</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            <tr id="transactionStop()">
+        <td><a href="brightzone-rexpro-connection.html#transactionStop()-detail">transactionStop()</a></td>
+        <td>End a transaction</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+    </table>
+</div>
+
+<div class="summary doc-method">
+<h2>Protected Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+                                <tr id="makeHandshake()">
+        <td><a href="brightzone-rexpro-connection.html#makeHandshake()-detail">makeHandshake()</a></td>
+        <td>Make Original handshake with the server</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+                    <tr id="socketGetUnpack()">
+        <td><a href="brightzone-rexpro-connection.html#socketGetUnpack()-detail">socketGetUnpack()</a></td>
+        <td>Recieves binary data over the socket and parses it</td>
+        <td><a href="brightzone-rexpro-connection.html">brightzone\rexpro\Connection</a></td>
+    </tr>
+            </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$bindings-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#$bindings-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $bindings        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>Bindings for the gremlin script</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-rexpro-connection.html#$bindings-detail">$bindings</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$graphObj-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#$graphObj-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $graphObj        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The graphObject to use.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-rexpro-connection.html#$graphObj-detail">$graphObj</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$host-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#$host-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $host        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>Contains the host information required to connect to the database.
+format: server:port
+If [port] is ommited 8182 will be assumed</p>
+<p>Example: localhost:8182</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-rexpro-connection.html#$host-detail">$host</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$message-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#$message-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $message        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>Message object</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="brightzone-rexpro-messages.html">brightzone\rexpro\Messages</a></span> <a href="brightzone-rexpro-connection.html#$message-detail">$message</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$password-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#$password-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $password        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The password for establishing DB connection. Defaults to NULL.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-rexpro-connection.html#$password-detail">$password</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$timeout-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#$timeout-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $timeout        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>Timeout to use for connection to Rexster. If not set the timeout set in php.ini will be used: ini_get("default_socket_timeout")</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.float">float</a></span> <a href="brightzone-rexpro-connection.html#$timeout-detail">$timeout</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
+    <div class="detail-header h3" id="$username-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#$username-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $username        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>The username for establishing DB connection. Defaults to NULL.</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-rexpro-connection.html#$username-detail">$username</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="__construct()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#__construct()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        __construct()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Overloading constructor to instantiate a Messages instance and
+provide it with a default serializer.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-rexpro-connection.html#__construct()-detail">__construct</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="__destroy()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#__destroy()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        __destroy()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Make sure the session is closed on destruction of the object</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-rexpro-connection.html#__destroy()-detail">__destroy</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="close()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#close()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        close()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Close connection to server
+This closes the current session on the server then closes the socket</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-rexpro-connection.html#close()-detail">close</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>TRUE on success</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getSession()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#getSession()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        getSession()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Retrieve the current session UUID</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-rexpro-connection.html#getSession()-detail">getSession</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Current UUID</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="inTransaction()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#inTransaction()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        inTransaction()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Return whether or not this cnnection object is in transaction mode</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-rexpro-connection.html#inTransaction()-detail">inTransaction</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>TRUE if in transaction, FALSE otherwise</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="isConnected()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#isConnected()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        isConnected()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Checks if the socket is currently open</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-rexpro-connection.html#isConnected()-detail">isConnected</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>TRUE if it is open FALSE if not</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="makeHandshake()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#makeHandshake()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        makeHandshake()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Make Original handshake with the server</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">bool</span> <strong><a href="brightzone-rexpro-connection.html#makeHandshake()-detail">makeHandshake</a></strong> ( <span style="color: #0000BB">$origin&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$origin</span></td>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>Whether or not to provide the origin header. currently unsupported</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>TRUE on succes FALSE on failure</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="open()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#open()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        open()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Connects to socket and starts a session with gremlin-server</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-rexpro-connection.html#open()-detail">open</a></strong> ( <span style="color: #0000BB">$host&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'localhost:8182'</span>, <span style="color: #0000BB">$graphObj&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'graph'</span>, <span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span>, <span style="color: #0000BB">$password&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span>, <span style="color: #0000BB">$config&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$host</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Host and port seperated by ":"</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$graphObj</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$username</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Username for authentification</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$password</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Password to use for authentification</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$config</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>TRUE on success FALSE on error</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="send()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#send()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        send()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Constructs and sends a Messages entity or gremlin script to the server.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-rexpro-connection.html#send()-detail">send</a></strong> ( <span style="color: #0000BB">$msg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span>, <span style="color: #0000BB">$processor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span>, <span style="color: #0000BB">$op&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'eval'</span>, <span style="color: #0000BB">$args&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$msg</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>(Messages|String|NULL) the message to send, NULL means use $this-&gt;message</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$processor</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>OpProcessor to use.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$op</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Operation to run against opProcessor.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$args</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Arguments to overwrite.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Reply from server.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="socketGetUnpack()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#socketGetUnpack()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        socketGetUnpack()
+        <span class="detail-header-tag small">
+            protected                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Recieves binary data over the socket and parses it</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-rexpro-connection.html#socketGetUnpack()-detail">socketGetUnpack</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>PHP native result from server</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="transactionStart()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#transactionStart()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        transactionStart()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Start a transaction.</strong></p>
+
+        <p>Transaction start only makes sens if committing is set to manual on the server.
+Manual is not the default setting so we will assume a session UUID must exists</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-rexpro-connection.html#transactionStart()-detail">transactionStart</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>TRUE on success FALSE on failure</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="transactionStop()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-rexpro-connection.html#transactionStop()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        transactionStop()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>End a transaction</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-rexpro-connection.html#transactionStop()-detail">transactionStop</a></strong> ( <span style="color: #0000BB">$success&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">TRUE</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$success</span></td>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>Should the transaction commit or revert changes</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>TRUE on success FALSE on failure.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Thu, 25 Jun 2015 08:43:59 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) shiftWindow();
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

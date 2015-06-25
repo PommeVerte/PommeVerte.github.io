@@ -1,0 +1,52 @@
+Array
+(
+    [0] => Array
+        (
+            [line] => 118
+            [file] => src/Connection.php
+            [message] => Undefined parameter documented: $graph in open().
+        )
+
+    [1] => Array
+        (
+            [line] => 118
+            [file] => src/Connection.php
+            [message] => Undefined parameter documented: $graphObject in open().
+        )
+
+    [2] => Array
+        (
+            [line] => 54
+            [file] => src/Messages.php
+            [message] => Undefined parameter documented: $serializer in __construct().
+        )
+
+    [3] => Array
+        (
+            [line] => 26
+            [file] => src/ServerException.php
+            [message] => No docblock for element '__construct'
+        )
+
+    [4] => Array
+        (
+            [line] => 36
+            [file] => src/serializers/Json.php
+            [message] => Undefined parameter documented:  in serialize().
+        )
+
+    [5] => Array
+        (
+            [line] => 37
+            [file] => src/serializers/Msgpack.php
+            [message] => Undefined parameter documented:  in serialize().
+        )
+
+    [6] => Array
+        (
+            [line] => 24
+            [file] => src/serializers/SerializerInterface.php
+            [message] => Undefined parameter documented:  in serialize().
+        )
+
+)
