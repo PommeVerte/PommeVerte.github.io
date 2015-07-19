@@ -9,13 +9,6 @@ Array
 
     [1] => Array
         (
-            [line] => 37
-            [file] => src/serializers/Msgpack.php
-            [message] => Undefined parameter documented:  in serialize().
-        )
-
-    [2] => Array
-        (
             [line] => 24
             [file] => src/serializers/SerializerInterface.php
             [message] => Undefined parameter documented:  in serialize().
