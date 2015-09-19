@@ -3,14 +3,14 @@ Array
     [0] => Array
         (
             [line] => 36
-            [file] => src/serializers/Json.php
+            [file] => src/Serializers/Json.php
             [message] => Undefined parameter documented:  in serialize().
         )
 
     [1] => Array
         (
             [line] => 24
-            [file] => src/serializers/SerializerInterface.php
+            [file] => src/Serializers/SerializerInterface.php
             [message] => Undefined parameter documented:  in serialize().
         )
 
