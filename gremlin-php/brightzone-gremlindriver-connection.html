@@ -4,11 +4,11 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="en" />
-        <link href="./assets/5853a446/css/bootstrap.css" rel="stylesheet">
-<link href="./assets/32215c23/style.css" rel="stylesheet">
-<script src="./assets/9dd941e0/jquery.js"></script>
-<script src="./assets/5853a446/js/bootstrap.js"></script>
-<script src="./assets/71921912/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
+        <link href="./assets/9b1024b9/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/f162dcdc/style.css" rel="stylesheet">
+<script src="./assets/1dc4bf3/jquery.js"></script>
+<script src="./assets/9b1024b9/js/bootstrap.js"></script>
+<script src="./assets/b2d199ed/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
@@ -125,6 +125,12 @@ $connection-&gt;send();
 Default : 8182</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
+            <tr id="$ssl">
+        <td><a href="brightzone-gremlindriver-connection.html#$ssl-detail">$ssl</a></td>
+        <td>bool</td>
+        <td>Whether or not we're using ssl</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
             <tr id="$timeout">
         <td><a href="brightzone-gremlindriver-connection.html#$timeout-detail">$timeout</a></td>
         <td><a href="http://www.php.net/language.types.float">float</a></td>
@@ -167,7 +173,7 @@ provide it with a default serializer.</td>
         <td>Make sure the session is closed on destruction of the object</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
-            <tr id="close()">
+                <tr id="close()">
         <td><a href="brightzone-gremlindriver-connection.html#close()-detail">close()</a></td>
         <td>Close connection to server
 This closes the current session on the server then closes the socket</td>
@@ -230,7 +236,12 @@ This closes the current session on the server then closes the socket</td>
 <tr>
   <th>Method</th><th>Description</th><th>Defined By</th>
 </tr>
-                                <tr id="makeHandshake()">
+                <tr id="authenticate()">
+        <td><a href="brightzone-gremlindriver-connection.html#authenticate()-detail">authenticate()</a></td>
+        <td>Builds an authentication message when challenged by the server</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
+                            <tr id="makeHandshake()">
         <td><a href="brightzone-gremlindriver-connection.html#makeHandshake()-detail">makeHandshake()</a></td>
         <td>Make Original handshake with the server</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
@@ -343,6 +354,21 @@ This closes the current session on the server then closes the socket</td>
 
     
 
+    <div class="detail-header h3" id="$ssl-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$ssl-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $ssl        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature">bool <a href="brightzone-gremlindriver-connection.html#$ssl-detail">$ssl</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
+
+    <p>Whether or not we're using ssl</p>
+
+    
+
     <div class="detail-header h3" id="$timeout-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$timeout-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
@@ -423,6 +449,28 @@ provide it with a default serializer.</strong></p>
 
     <table class="detail-table table table-striped table-bordered table-hover">
         <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-connection.html#__destruct()-detail">__destruct</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="authenticate()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#authenticate()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        authenticate()
+        <span class="detail-header-tag small">
+            protected            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Builds an authentication message when challenged by the server</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-connection.html#authenticate()-detail">authenticate</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
             </table>
 
 <!--	-->
@@ -836,7 +884,7 @@ Manual is not the default setting so we will assume a session UUID must exists</
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Wed, 23 Sep 2015 07:39:17 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 23 Sep 2015 09:37:04 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {
