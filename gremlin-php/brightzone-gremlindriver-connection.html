@@ -4,11 +4,11 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="en" />
-        <link href="./assets/8af55069/css/bootstrap.css" rel="stylesheet">
-<link href="./assets/43ec8f5b/style.css" rel="stylesheet">
-<script src="./assets/aed41e88/jquery.js"></script>
-<script src="./assets/8af55069/js/bootstrap.js"></script>
-<script src="./assets/b89e8984/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
+        <link href="./assets/8df349fb/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/1d3578a6/style.css" rel="stylesheet">
+<script src="./assets/95c234ad/jquery.js"></script>
+<script src="./assets/8df349fb/js/bootstrap.js"></script>
+<script src="./assets/afd08f42/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
@@ -193,9 +193,14 @@ This closes the current session on the server then closes the socket</td>
         <td>Connects to socket and starts a session with gremlin-server</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
+            <tr id="run()">
+        <td><a href="brightzone-gremlindriver-connection.html#run()-detail">run()</a></td>
+        <td>Constructs and sends a Messages entity or gremlin script to the server without waiting for a response.</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
             <tr id="send()">
         <td><a href="brightzone-gremlindriver-connection.html#send()-detail">send()</a></td>
-        <td>Constructs and sends a Messages entity or gremlin script to the server.</td>
+        <td>Constructs and sends a Messages entity or gremlin script to the server and then waits for response</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
                 <tr id="transactionStart()">
@@ -230,7 +235,7 @@ This closes the current session on the server then closes the socket</td>
         <td>Make Original handshake with the server</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
-                    <tr id="socketGetUnpack()">
+                        <tr id="socketGetUnpack()">
         <td><a href="brightzone-gremlindriver-connection.html#socketGetUnpack()-detail">socketGetUnpack()</a></td>
         <td>Recieves binary data over the socket and parses it</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
@@ -597,6 +602,58 @@ This closes the current session on the server then closes the socket</strong></p
 
 <!--	-->
 
+    <div class="detail-header h3" id="run()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#run()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        run()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Constructs and sends a Messages entity or gremlin script to the server without waiting for a response.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.array">array</a> <strong><a href="brightzone-gremlindriver-connection.html#run()-detail">run</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$msg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$processor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$op&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'eval'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$args&nbsp;</span><span style="color: #007700">=&nbsp;[]&nbsp;)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$msg</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>(Messages|String|NULL) the message to send, NULL means use $this-&gt;message</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$processor</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>OpProcessor to use.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$op</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Operation to run against opProcessor.</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$args</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Arguments to overwrite.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Reply from server.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
     <div class="detail-header h3" id="send()-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#send()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
@@ -608,7 +665,7 @@ This closes the current session on the server then closes the socket</strong></p
     </div>
 
     <div class="doc-description">
-        <p><strong>Constructs and sends a Messages entity or gremlin script to the server.</strong></p>
+        <p><strong>Constructs and sends a Messages entity or gremlin script to the server and then waits for response</strong></p>
 
         
             </div>
@@ -779,7 +836,7 @@ Manual is not the default setting so we will assume a session UUID must exists</
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Sat, 19 Sep 2015 00:57:48 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 23 Sep 2015 07:34:15 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {
