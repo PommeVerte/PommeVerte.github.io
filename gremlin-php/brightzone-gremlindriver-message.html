@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/20ea3d1d/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/3d5a0503/style.css" rel="stylesheet">
+<script src="./assets/d86e801e/jquery.js"></script>
+<script src="./assets/20ea3d1d/js/bootstrap.js"></script>
+<script src="./assets/7ee94032/jssearch.js"></script>    <title>Message, Brightzone\GremlinDriver\Message - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w10" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w10-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w10-collapse" class="collapse navbar-collapse"><ul id="w11" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-8" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver <b class="caret"></b></a><div id="navigation-8" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./brightzone-gremlindriver-connection.html">Connection</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-helper.html">Helper</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-internalexception.html">InternalException</a>
+<a class="list-group-item active" href="./brightzone-gremlindriver-message.html">Message</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-serverexception.html">ServerException</a></div>
+<a class="list-group-item" href="#navigation-9" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver\Serializers <b class="caret"></b></a><div id="navigation-9" class="submenu panel-collapse collapse"><a class="list-group-item" href="./brightzone-gremlindriver-serializers-json.html">Json</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-serializers-serializerinterface.html">SerializerInterface</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class Brightzone\GremlinDriver\Message</h1>
+<div id="nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td></tr>
+                                        </table>
+
+<div id="classDescription">
+    <p><strong>Gremlin-server PHP Driver client Messages class
+Builds and parses binary messages for communication with Gremlin-server
+Use example:</strong></p>
+    <pre><code>$message = new Message;
+$message-&gt;gremlin = 'g.V';
+$message-&gt;op = 'eval';
+$message-&gt;processor = '';
+$message-&gt;setArguments(['language'=&gt;'gremlin-groovy']);
+$message-&gt;registerSerializer('\Brightzone\GremlinDriver\Serializers\Json');
+// etc ...
+$db = new Connection;
+$db-&gt;open();
+$db-&gt;send($message);
+</code></pre>
+
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$args">
+        <td><a href="brightzone-gremlindriver-message.html#$args-detail">$args</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Args of the message</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="$configuration">
+        <td><a href="brightzone-gremlindriver-message.html#$configuration-detail">$configuration</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Basic message configuration
+ ie: op,processor,requestId, etc.</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="__construct()">
+        <td><a href="brightzone-gremlindriver-message.html#__construct()-detail">__construct()</a></td>
+        <td>Overriding construct to populate _serializer</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="__get()">
+        <td><a href="brightzone-gremlindriver-message.html#__get()-detail">__get()</a></td>
+        <td>Magic getter to fetch $this-&gt;configuration + gremlin arg</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="__isset()">
+        <td><a href="brightzone-gremlindriver-message.html#__isset()-detail">__isset()</a></td>
+        <td>Magic isset to return proper setting of $this-&gt;configuration + gremlin arg</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="__set()">
+        <td><a href="brightzone-gremlindriver-message.html#__set()-detail">__set()</a></td>
+        <td>Magic setter to populate $this-&gt;configuration + gremlin arg</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="bindValue()">
+        <td><a href="brightzone-gremlindriver-message.html#bindValue()-detail">bindValue()</a></td>
+        <td>Binds a value to be used inside gremlin script</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="buildMessage()">
+        <td><a href="brightzone-gremlindriver-message.html#buildMessage()-detail">buildMessage()</a></td>
+        <td>Constructs full binary message for use in script execution</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="clear()">
+        <td><a href="brightzone-gremlindriver-message.html#clear()-detail">clear()</a></td>
+        <td>Clear this message and start anew</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="createUuid()">
+        <td><a href="brightzone-gremlindriver-message.html#createUuid()-detail">createUuid()</a></td>
+        <td>Create and set request UUID</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="getSerializer()">
+        <td><a href="brightzone-gremlindriver-message.html#getSerializer()-detail">getSerializer()</a></td>
+        <td>Get the serializer object depending on a provided mimeType</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="parse()">
+        <td><a href="brightzone-gremlindriver-message.html#parse()-detail">parse()</a></td>
+        <td>Parses full message (including outter envelope)</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="registerSerializer()">
+        <td><a href="brightzone-gremlindriver-message.html#registerSerializer()-detail">registerSerializer()</a></td>
+        <td>Register a new serializer to this object</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+            <tr id="setArguments()">
+        <td><a href="brightzone-gremlindriver-message.html#setArguments()-detail">setArguments()</a></td>
+        <td>Setter method for arguments
+This will replace existing entries.</td>
+        <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$args-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#$args-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $args        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature"><a href="http://www.php.net/language.types.array">array</a> <a href="brightzone-gremlindriver-message.html#$args-detail">$args</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+    <p>Args of the message</p>
+
+    
+
+    <div class="detail-header h3" id="$configuration-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#$configuration-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $configuration        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature"><a href="http://www.php.net/language.types.array">array</a> <a href="brightzone-gremlindriver-message.html#$configuration-detail">$configuration</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
+    <p>Basic message configuration
+ ie: op,processor,requestId, etc..</p>
+
+    
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="__construct()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#__construct()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        __construct()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Overriding construct to populate _serializer</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-message.html#__construct()-detail">__construct</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="__get()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#__get()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        __get()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Magic getter to fetch $this-&gt;configuration + gremlin arg</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.string">string</a> <strong><a href="brightzone-gremlindriver-message.html#__get()-detail">__get</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Name of the variable you want to get</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="__isset()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#__isset()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        __isset()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Magic isset to return proper setting of $this-&gt;configuration + gremlin arg</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">bool <strong><a href="brightzone-gremlindriver-message.html#__isset()-detail">__isset</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Name of the variable you want to check</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="__set()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#__set()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        __set()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Magic setter to populate $this-&gt;configuration + gremlin arg</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-message.html#__set()-detail">__set</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Name of the variable you want to set</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$value</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Value of the variable you want to set</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="bindValue()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#bindValue()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        bindValue()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Binds a value to be used inside gremlin script</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-message.html#bindValue()-detail">bindValue</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$bind</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$bind</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The binding name</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$value</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>The value that the binding name refers to</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="buildMessage()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#buildMessage()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        buildMessage()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Constructs full binary message for use in script execution</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.string">string</a> <strong><a href="brightzone-gremlindriver-message.html#buildMessage()-detail">buildMessage</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Returns binary data to be packed and sent to socket</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="clear()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#clear()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        clear()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Clear this message and start anew</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-message.html#clear()-detail">clear</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+            </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="createUuid()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#createUuid()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        createUuid()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Create and set request UUID</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.string">string</a> <strong><a href="brightzone-gremlindriver-message.html#createUuid()-detail">createUuid</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The UUID</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getSerializer()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#getSerializer()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        getSerializer()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Get the serializer object depending on a provided mimeType</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">\Brightzone\GremlinDriver\SerializerInterface|bool <strong><a href="brightzone-gremlindriver-message.html#getSerializer()-detail">getSerializer</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$mimeType&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$mimeType</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The mimeType of the serializer you want to retrieve</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">\Brightzone\GremlinDriver\SerializerInterface|bool</td>
+                  <td class="param-desc-col"><p>Serializer object or FALSE if none exist.</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="parse()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#parse()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        parse()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Parses full message (including outter envelope)</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.array">array</a> <strong><a href="brightzone-gremlindriver-message.html#parse()-detail">parse</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$payload</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$isBinary&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$payload</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Payload from the server response</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$isBinary</span></td>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>Whether we should expect binary data (TRUE) or plein text (FALSE)</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Array containing all results</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="registerSerializer()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#registerSerializer()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        registerSerializer()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Register a new serializer to this object</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-message.html#registerSerializer()-detail">registerSerializer</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$default&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">TRUE&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$value</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>Either a serializer object or a string of the class name (with namespace)</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$default</span></td>
+                  <td class="param-type-col">bool</td>
+                  <td class="param-desc-col"><p>Whether or not to use this serializer as the default one</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="setArguments()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-message.html#setArguments()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        setArguments()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Setter method for arguments
+This will replace existing entries.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-message.html#setArguments()-detail">setArguments</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$array</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Collection of arguments</p>
+</td>
+                </tr>
+                                                </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Thu, 01 Oct 2015 13:58:55 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) shiftWindow();
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

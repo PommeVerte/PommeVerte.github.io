@@ -2,15 +2,15 @@ Array
 (
     [0] => Array
         (
-            [line] => 36
-            [file] => src/Serializers/Json.php
+            [line] => 33
+            [file] => /home/travis/build/PommeVerte/gremlin-php/src/Serializers/Json.php
             [message] => Undefined parameter documented:  in serialize().
         )
 
     [1] => Array
         (
-            [line] => 24
-            [file] => src/Serializers/SerializerInterface.php
+            [line] => 23
+            [file] => /home/travis/build/PommeVerte/gremlin-php/src/Serializers/SerializerInterface.php
             [message] => Undefined parameter documented:  in serialize().
         )
 
