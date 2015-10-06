@@ -4,11 +4,11 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="en" />
-        <link href="./assets/8af55069/css/bootstrap.css" rel="stylesheet">
-<link href="./assets/43ec8f5b/style.css" rel="stylesheet">
-<script src="./assets/aed41e88/jquery.js"></script>
-<script src="./assets/8af55069/js/bootstrap.js"></script>
-<script src="./assets/11ca238c/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
+        <link href="./assets/7818f2ca/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/9f1c03ec/style.css" rel="stylesheet">
+<script src="./assets/68c0103f/jquery.js"></script>
+<script src="./assets/7818f2ca/js/bootstrap.js"></script>
+<script src="./assets/5a3b3473/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
@@ -34,7 +34,8 @@
 <a class="list-group-item" href="./brightzone-gremlindriver-helper.html">Helper</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-internalexception.html">InternalException</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-message.html">Message</a>
-<a class="list-group-item" href="./brightzone-gremlindriver-serverexception.html">ServerException</a></div>
+<a class="list-group-item" href="./brightzone-gremlindriver-serverexception.html">ServerException</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-workload.html">Workload</a></div>
 <a class="list-group-item" href="#navigation-5" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver\Serializers <b class="caret"></b></a><div id="navigation-5" class="submenu panel-collapse collapse"><a class="list-group-item" href="./brightzone-gremlindriver-serializers-json.html">Json</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-serializers-serializerinterface.html">SerializerInterface</a></div></div>    </div>
     <div class="col-md-9 api-content" role="main">
@@ -87,7 +88,7 @@ $connection-&gt;send();
 <tr>
   <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
 </tr>
-        <tr id="$bindings">
+            <tr id="$bindings">
         <td><a href="brightzone-gremlindriver-connection.html#$bindings-detail">$bindings</a></td>
         <td><a href="http://www.php.net/language.types.array">array</a></td>
         <td>Bindings for the gremlin script</td>
@@ -125,6 +126,18 @@ $connection-&gt;send();
 Default : 8182</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
+            <tr id="$retryAttempts">
+        <td><a href="brightzone-gremlindriver-connection.html#$retryAttempts-detail">$retryAttempts</a></td>
+        <td>\Brightzone\GremlinDriver\the</td>
+        <td>Number of attempts before total failure</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
+            <tr id="$retryStrategy">
+        <td><a href="brightzone-gremlindriver-connection.html#$retryStrategy-detail">$retryStrategy</a></td>
+        <td>\Brightzone\GremlinDriver\the</td>
+        <td>Strategy to use for retry</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
             <tr id="$ssl">
         <td><a href="brightzone-gremlindriver-connection.html#$ssl-detail">$ssl</a></td>
         <td>bool</td>
@@ -144,6 +157,30 @@ Default : 8182</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
     </table>
+</div>
+
+<div class="summary doc-property">
+<h2>Protected Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$_socket">
+        <td><a href="brightzone-gremlindriver-connection.html#$_socket-detail">$_socket</a></td>
+        <td><a href="http://www.php.net/language.types.resource">resource</a></td>
+        <td>Rexpro socket connection</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
+                                                </table>
 </div>
 
 <a id="methods"></a>
@@ -209,7 +246,12 @@ This closes the current session on the server then closes the socket</td>
         <td>Constructs and sends a Message entity or gremlin script to the server and then waits for response</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
-                <tr id="transactionStart()">
+                <tr id="transaction()">
+        <td><a href="brightzone-gremlindriver-connection.html#transaction()-detail">transaction()</a></td>
+        <td>Run a callback in a transaction.</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
+            <tr id="transactionStart()">
         <td><a href="brightzone-gremlindriver-connection.html#transactionStart()-detail">transactionStart()</a></td>
         <td>Start a transaction.</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
@@ -251,7 +293,7 @@ This closes the current session on the server then closes the socket</td>
         <td>Recieves binary data over the socket and parses it</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
-            </table>
+                </table>
 </div>
 
 <a id="events"></a>
@@ -261,6 +303,21 @@ This closes the current session on the server then closes the socket</td>
 <h2>Property Details</h2>
 
 <div class="property-doc">
+
+    <div class="detail-header h3" id="$_socket-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$_socket-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $_socket        <span class="detailHeaderTag small">
+            protected                                    property
+                    </span>
+    </div>
+
+    <div class="signature"><a href="http://www.php.net/language.types.resource">resource</a> <a href="brightzone-gremlindriver-connection.html#$_socket-detail">$_socket</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+    <p>Rexpro socket connection</p>
+
+    
 
     <div class="detail-header h3" id="$bindings-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
@@ -351,6 +408,36 @@ This closes the current session on the server then closes the socket</td>
 
     <p>Contains port information to connect to the database</p>
 <p>Default : 8182</p>
+
+    
+
+    <div class="detail-header h3" id="$retryAttempts-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$retryAttempts-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $retryAttempts        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature">\Brightzone\GremlinDriver\the <a href="brightzone-gremlindriver-connection.html#$retryAttempts-detail">$retryAttempts</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span></div>
+
+    <p>Number of attempts before total failure</p>
+
+    
+
+    <div class="detail-header h3" id="$retryStrategy-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$retryStrategy-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $retryStrategy        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature">\Brightzone\GremlinDriver\the <a href="brightzone-gremlindriver-connection.html#$retryStrategy-detail">$retryStrategy</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'linear'</span></div>
+
+    <p>Strategy to use for retry</p>
 
     
 
@@ -782,6 +869,47 @@ This closes the current session on the server then closes the socket</strong></p
 
 <!--	-->
 
+    <div class="detail-header h3" id="transaction()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#transaction()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        transaction()
+        <span class="detail-header-tag small">
+            public            method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Run a callback in a transaction.</strong></p>
+
+        <p>The advantage of this is that it allows for fail-retry strategies</p>
+
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature">mixed <strong><a href="brightzone-gremlindriver-connection.html#transaction()-detail">transaction</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;callable&nbsp;</span><span style="color: #0000BB">$callback</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;[]&nbsp;)</span></td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$callback</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.callable">callable</a></td>
+                  <td class="param-desc-col"><p>The code to execute within the scope of this transaction</p>
+</td>
+                </tr>
+                            <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The params to pass to the callback</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>The return value of the provided callable</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
     <div class="detail-header h3" id="transactionStart()-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#transactionStart()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
@@ -884,7 +1012,7 @@ Manual is not the default setting so we will assume a session UUID must exists</
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Tue, 06 Oct 2015 15:23:49 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Tue, 06 Oct 2015 19:53:56 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {
