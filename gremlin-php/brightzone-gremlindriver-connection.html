@@ -8,7 +8,7 @@
 <link href="./assets/43ec8f5b/style.css" rel="stylesheet">
 <script src="./assets/aed41e88/jquery.js"></script>
 <script src="./assets/8af55069/js/bootstrap.js"></script>
-<script src="./assets/b1c01280/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
+<script src="./assets/21cd786e/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
@@ -92,6 +92,13 @@ $connection-&gt;send();
         <td><a href="brightzone-gremlindriver-connection.html#$bindings-detail">$bindings</a></td>
         <td><a href="http://www.php.net/language.types.array">array</a></td>
         <td>Bindings for the gremlin script</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
+            <tr id="$emptySet">
+        <td><a href="brightzone-gremlindriver-connection.html#$emptySet-detail">$emptySet</a></td>
+        <td>bool</td>
+        <td>Whether or not the driver should return empty result sets as an empty array
+(the default behavior is to propagate the exception from the server - yes the server throws exceptions on empty result sets.</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
             <tr id="$graph">
@@ -180,7 +187,7 @@ Default : 8182</td>
         <td>Rexpro socket connection</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
-                                                </table>
+                                                    </table>
 </div>
 
 <a id="methods"></a>
@@ -331,6 +338,22 @@ This closes the current session on the server then closes the socket</td>
     <div class="signature"><a href="http://www.php.net/language.types.array">array</a> <a href="brightzone-gremlindriver-connection.html#$bindings-detail">$bindings</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
 
     <p>Bindings for the gremlin script</p>
+
+    
+
+    <div class="detail-header h3" id="$emptySet-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$emptySet-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $emptySet        <span class="detailHeaderTag small">
+            public                                    property
+                    </span>
+    </div>
+
+    <div class="signature">bool <a href="brightzone-gremlindriver-connection.html#$emptySet-detail">$emptySet</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
+
+    <p>Whether or not the driver should return empty result sets as an empty array
+(the default behavior is to propagate the exception from the server - yes the server throws exceptions on empty result sets.)</p>
 
     
 
@@ -1012,7 +1035,7 @@ Manual is not the default setting so we will assume a session UUID must exists</
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Sat, 21 Nov 2015 14:12:38 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Sat, 21 Nov 2015 14:30:51 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {
