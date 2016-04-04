@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>gremlin-console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/cayman.css">
+    <link rel="stylesheet" href="css/prism.css">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">gremlin-console</h1>
+      <h2 class="project-tagline">Console for gremlin-server</h2><a href="https://github.com/PommeVerte/gremlin-console-js" target="_blank" class="btn">View on GitHub</a><a href="https://npmjs.com/package/gremlin-console" target="_blank" class="btn">View on npm</a>
+    </section>
+    <section data-spy="scroll" data-target=".scrollspy" class="main-content">
+      <div class="row">
+        <div class="col-md-3 col-xs-3 bs-docs-sidebar">
+          <ul id="sidebar" class="nav nav-stacked fixed">
+            <li><a href="index.html">Main</a></li>
+            <li><a href="Console.js.html">Console.js</a></li>
+            <li><a href="DriverClient.js.html">DriverClient.js</a></li>
+            <li><a href="Html.js.html">Html.js</a></li>
+            <li class="active"><a href="Result.js.html">Result.js
+                <ul class="nav nav-stacked">
+                  <li><a href="#Result"><i class="alert alert-success"></i><span>Result</span></a>
+                  </li>
+                  <li><a href="#constructor"><i class="alert alert-success"></i><span>constructor</span></a>
+                  </li>
+                  <li><a href="#getRawResults"><i class="alert alert-info"></i><span>getRawResults</span></a>
+                  </li>
+                  <li><a href="#getRawError"><i class="alert alert-info"></i><span>getRawError</span></a>
+                  </li>
+                  <li><a href="#getResults"><i class="alert alert-info"></i><span>getResults</span></a>
+                  </li>
+                  <li><a href="#getError"><i class="alert alert-info"></i><span>getError</span></a>
+                  </li>
+                  <li><a href="#getHtmlResults"><i class="alert alert-info"></i><span>getHtmlResults</span></a>
+                  </li>
+                  <li><a href="#getHtmlError"><i class="alert alert-info"></i><span>getHtmlError</span></a>
+                  </li>
+                  <li><a href="#getHistory"><i class="alert alert-info"></i><span>getHistory</span></a>
+                  </li>
+                </ul></a></li>
+            <li><a href="index.js.html">index.js</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <section id="Result">
+            <h1>Result</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">class</div><span>&nbsp;</span><span>new Result()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Handles logic related to results sent back to the console<br />These can be custom crafted to suit different server outputs.<br />Either because of a custom serializer or if a call is made to a server side script.<br />It also allows for a change in the way the elements are displayed in html and how the history entries are generated</p></div>
+          <pre><code class="language-javascript">class Result {</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">_rawResults;</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">_rawError;</code></pre>
+          <section id="constructor">
+            <h1>constructor</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">constructor</div><span>&nbsp;</span><span>constructor()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>results</td>
+                <td>Mixed</td>
+                <td><p>the server results for a query</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Constructor takes a server response and holds onto it until it is required</p></div>
+          <pre><code class="language-javascript">constructor(err, results) {
+    this._rawResults = results;
+    this._rawError = err;
+}</code></pre>
+          <section id="getRawResults">
+            <h1>getRawResults</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getRawResults()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the raw result data</p></div>
+          <pre><code class="language-javascript">getRawResults() {
+    return this._rawResults;
+}</code></pre>
+          <section id="getRawError">
+            <h1>getRawError</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getRawError()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the raw error info</p></div>
+          <pre><code class="language-javascript">getRawError() {
+    return this._rawError;
+}</code></pre>
+          <section id="getResults">
+            <h1>getResults</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getResults()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Get generic results.<br />These results are constructed in a way the console can comprehend them.<br />Extend this if you&#39;re receiving non conventional data from the server</p></div>
+          <pre><code class="language-javascript">getResults() {
+    return this.getRawResults();
+}</code></pre>
+          <section id="getError">
+            <h1>getError</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getError()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the raw error info<br />These results are constructed in a way the console can comprehend them.<br />Extend this if you&#39;re receiving non conventional data from the server</p></div>
+          <pre><code class="language-javascript">getError() {
+    return this.getRawError();
+}</code></pre>
+          <section id="getHtmlResults">
+            <h1>getHtmlResults</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getHtmlResults()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>get the HTML results to put into the window dom element<br />Extend this for custom behavior</p></div>
+          <pre><code class="language-javascript">getHtmlResults() {
+    var jsonResultSet = '';
+    this.getResults().forEach( (entry) =&gt; {
+        jsonResultSet += Html.jsonSyntaxHighlight(entry) + '&lt;br/&gt;';
+    });
+    return $('&lt;div&gt;').addClass(&quot;port-response json&quot;).html(jsonResultSet);
+}</code></pre>
+          <section id="getHtmlError">
+            <h1>getHtmlError</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getHtmlError()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>get the HTML error to put into the window dom element<br />Extend this for custom behavior</p></div>
+          <pre><code class="language-javascript">getHtmlError() {
+    return $('&lt;div&gt;').addClass(&quot;port-error&quot;).html('Could not complete query =&gt; ' + Html.htmlEncode(this.getError().message))
+}</code></pre>
+          <section id="getHistory">
+            <h1>getHistory</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getHistory()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Return a line of the history entry for this result.<br />This is usefull if you want to customize the history entry. However remember that:<br />{error:&quot;na&quot;, query:&quot;&quot;} are required</p></div>
+          <pre><code class="language-javascript">getHistory() {
+    return {results: this.getRawResults(), error: this.getError()};
+}
+}
+
+export default Result;</code></pre>
+          <div class="footer site-footer">
+            <div class="span site-footer-owner"><a href="https://github.com/mr-doc/mr-doc-theme-cayman">Cayman</a> is maintained by <a href="https://github.com/iwatakeshi">iwatakeshi</a>.</div>
+            <div class="span site-footer-credits">This page was generated by <a href="https://github.com/mr-doc/mr-doc">Mr. Doc</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/affix.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/scrollspy.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/prism-bash.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('body').scrollspy({
+          target: ".bs-docs-sidebar",
+          offset: 40
+        });
+        $('#sidebar').affix({
+          offset:{
+            bottom:60,
+            top: 60
+          }
+        }) 
+      });
+    </script>
+  </body>
+</html>

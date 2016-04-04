@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>gremlin-console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/cayman.css">
+    <link rel="stylesheet" href="css/prism.css">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">gremlin-console</h1>
+      <h2 class="project-tagline">Console for gremlin-server</h2><a href="https://github.com/PommeVerte/gremlin-console-js" target="_blank" class="btn">View on GitHub</a><a href="https://npmjs.com/package/gremlin-console" target="_blank" class="btn">View on npm</a>
+    </section>
+    <section data-spy="scroll" data-target=".scrollspy" class="main-content">
+      <div class="row">
+        <div class="col-md-3 col-xs-3 bs-docs-sidebar">
+          <ul id="sidebar" class="nav nav-stacked fixed">
+            <li><a href="index.html">Main</a></li>
+            <li class="active"><a href="Console.js.html">Console.js
+                <ul class="nav nav-stacked">
+                  <li><a href="#Console"><i class="alert alert-success"></i><span>Console</span></a>
+                  </li>
+                  <li><a href="#constructor"><i class="alert alert-success"></i><span>constructor</span></a>
+                  </li>
+                  <li><a href="#executeQuery"><i class="alert alert-info"></i><span>executeQuery</span></a>
+                  </li>
+                  <li><a href="#handleResults"><i class="alert alert-info"></i><span>handleResults</span></a>
+                  </li>
+                  <li><a href="#populateHistory"><i class="alert alert-info"></i><span>populateHistory</span></a>
+                  </li>
+                  <li><a href="#_attachHandlers"><i class="alert alert-info"></i><span>_attachHandlers</span></a>
+                  </li>
+                  <li><a href="#_getElement"><i class="alert alert-info"></i><span>_getElement</span></a>
+                  </li>
+                  <li><a href="#register"><i class="alert alert-info"></i><span>register</span></a>
+                  </li>
+                  <li><a href="#populateDbFromHistory"><i class="alert alert-info"></i><span>populateDbFromHistory</span></a>
+                  </li>
+                  <li><a href="#_addTyping"><i class="alert alert-info"></i><span>_addTyping</span></a>
+                  </li>
+                </ul></a></li>
+            <li><a href="DriverClient.js.html">DriverClient.js</a></li>
+            <li><a href="Html.js.html">Html.js</a></li>
+            <li><a href="Result.js.html">Result.js</a></li>
+            <li><a href="index.js.html">index.js</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <section id="Console">
+            <h1>Console</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">class</div><span>&nbsp;</span><span>new Console()</span><span>&nbsp;</span><span>&nbsp;</span><span class="label label-default">extends</span><span>&nbsp;</span><span>EventEmitter</span>
+            </p>
+          </section>
+          <div class="description"><p>Handles logic related to the console</p></div>
+          <pre><code class="language-javascript">class Console extends EventEmitter {</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">options;</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">windowElement;</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">inputElement;</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">client;</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">history = [];</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">historyPointer = 0;</code></pre>
+          <section id="constructor">
+            <h1>constructor</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">constructor</div><span>&nbsp;</span><span>constructor()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>element</td>
+                <td>String, DOM</td>
+                <td><p>This can be a jquery selector (String) or a dom element</p></td>
+              </tr>
+              <tr>
+                <td>options</td>
+                <td>Object</td>
+                <td><p>The options array.</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Builds the Console</p></div>
+          <pre><code class="language-javascript">constructor(windowElement, inputElement, options = {}) {
+    super();
+
+    this.windowElement = Console._getElement(windowElement);
+    this.inputElement = Console._getElement(inputElement);
+
+    //set window params
+    this.windowElement.css({overflowY: &quot;auto&quot;});
+
+    this.options = {
+        port: 8182,
+        host: 'localhost',
+        history: [],
+        driverOptions: {
+            session: true
+        },
+        visualizerOptions: {
+        },
+        ...options
+    }
+
+    //lets init the client
+    this.client = new Client(this.options.host, this.options.port, this.options.driverOptions);
+
+    this._attachHandlers();
+
+    //lets set up events
+    this.client.client.on('error', (err)=&gt;{ // bubble up errors
+        this.emit('error', err);
+    });
+    this.on('error', (err)=&gt;{
+        console.log(err);
+    });
+    this.on('results', (query, result)=&gt;{
+        this.handleResults(query, result);
+    });
+
+    //lets populate history properly if it isn't empty
+    if(typeof this.options.history[0] !== 'undefined') {
+        this.history = this.options.history;
+        this.historyPointer = this.history.length;
+        this.populateDbFromHistory();
+    }
+}</code></pre>
+          <section id="executeQuery">
+            <h1>executeQuery</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>executeQuery()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>query</td>
+                <td>String</td>
+                <td><p>the gremlin query</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Runs a gremlin query against gremlin-server</p></div>
+          <pre><code class="language-javascript">executeQuery(query) {
+    this.client.execute(query, (result) =&gt; {
+        this.emit('results', query, result);
+    });
+}</code></pre>
+          <section id="handleResults">
+            <h1>handleResults</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>handleResults()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>query</td>
+                <td>String</td>
+                <td><p>The query run against db</p></td>
+              </tr>
+              <tr>
+                <td>result</td>
+                <td>Result</td>
+                <td><p>The database result object</p></td>
+              </tr>
+              <tr>
+                <td>recordHistory</td>
+                <td>Boolean</td>
+                <td><p>Whether or not we should record this request in the history</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Applies logic based on results</p></div>
+          <pre><code class="language-javascript">handleResults(query, result, recordHistory = true) {
+    //add results to window
+    let response = $('&lt;div&gt;').addClass('port-section');
+    response.append($('&lt;div&gt;').addClass(&quot;port-query&quot;).html('gremlin&gt; ' + Html.htmlEncode(query)));
+
+    if(!result.getError()) {
+        response.append(result.getHtmlResults());
+    } else {
+        response.append(result.getHtmlError());
+    }
+
+    this.windowElement.append(response);
+    this.windowElement.animate({ scrollTop: this.windowElement[0].scrollHeight }, &quot;slow&quot;);
+    //add results to history
+    if(recordHistory) {
+        this.populateHistory(query, result);
+    }
+}</code></pre>
+          <section id="populateHistory">
+            <h1>populateHistory</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>populateHistory()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Populate the history array</p></div>
+          <pre><code class="language-javascript">populateHistory(query, result) {
+     if(query != &quot;&quot;                                                                 // not an empty query
+        &amp;&amp; (
+            !result.getError()
+            || (
+                typeof this.history[this.history.length - 1] == 'undefined'     // if error then don't save the same query multiple
+                || query != this.history[this.history.length - 1].query         // times.
+                )
+            )
+        ) {
+        this.history.push($.extend({query: query}, result.getHistory()));
+    }
+    this.historyPointer = this.history.length;
+}</code></pre>
+          <section id="_attachHandlers">
+            <h1>_attachHandlers</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>_attachHandlers()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Private : attaches keypress/down events to the input</p></div>
+          <pre><code class="language-javascript">_attachHandlers() {
+    const widget = this;
+
+    //Lets attach the enter key down handler
+    this.inputElement.keypress(function(e) {
+        if(e.which == 13) {
+            var result = widget.executeQuery($(this).val());
+            $(this).val('');
+        }
+    });
+
+    //Lets attach up and down arrows to navigate history
+    this.inputElement.keydown(function(e) {
+        if(e.which == 38) { // on up arrow
+            if( typeof widget.history[widget.historyPointer - 1] !== 'undefined' ) {
+                widget.historyPointer -= 1;
+                $(this).val(widget.history[widget.historyPointer].query);
+            }
+
+        }else if(e.which == 40) { // on down arrow
+            if( typeof widget.history[widget.historyPointer + 1] !== 'undefined' ) {
+                widget.historyPointer += 1;
+                $(this).val(widget.history[widget.historyPointer].query);
+            } else {
+                widget.historyPointer = widget.history.length;
+                $(this).val('');
+            }
+        }
+    })
+}</code></pre>
+          <section id="_getElement">
+            <h1>_getElement</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>_getElement()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>element</td>
+                <td>String, DOM</td>
+                <td><p>the elementwe want to get/set</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>DOM</td>
+                <td><p>the dom element (translated from string if necessary)</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Simple method to get/set elements from jquery selector strings</p></div>
+          <pre><code class="language-javascript">static _getElement(element) {
+    if(typeof element == &quot;string&quot;) {
+        return $(element);
+    } else {
+        return element;
+    }
+}</code></pre>
+          <section id="register">
+            <h1>register</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>register()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>plugin</td>
+                <td>Plugin</td>
+                <td><p>the plugin to register</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Registers a plugin for the console<br />Plugins follow a specific interface documented in the README.md</p></div>
+          <pre><code class="language-javascript">register(plugin) {
+    plugin.load(this);
+}</code></pre>
+          <section id="populateDbFromHistory">
+            <h1>populateDbFromHistory</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>populateDbFromHistory()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Populates the state of the graph from the history.<br />This essentially re-runs all the history queries so that all session variables and graph state exist.</p></div>
+          <pre><code class="language-javascript">populateDbFromHistory() {
+    if(typeof this.history[0].query !== 'undefined') {
+        //lets take all queries and bunch them together to recreate env
+        let query = '';
+        for (let i = 0; (i &lt; this.history.length - 1); i++) {
+            let result = this.client.buildResult(this.history[i].error, this.history[i].results);
+            this.handleResults(this.history[i].query, result, false); // don't emit('results') as some plugins may generate viz on each call.
+            if(typeof result.getError() === 'undefined' || result.getError() == '' || result.getError() == null)
+                query += this.history[i].query + &quot;;&quot;;
+        }
+        //add typing to avoid strange db errors due to sandboxing
+        query = this._addTyping(query);
+
+        //execute the bundled query
+        this.client.execute(query, (result) =&gt; {
+            if(!result.getError())
+            {
+                if(this.history.length &gt; 0) {
+                    //here we need to remove the last history item since we are going to apply it again.
+                    var lastHistory = this.history.splice(-1,1);
+                    this.executeQuery(lastHistory[0].query);
+                }
+            } else {
+                console.log(&quot;Your initializing script produced an error : \n&quot; + result.getError());
+                this.emit('error', new Error( &quot;Your initializing script produced an error : \n&quot; + Html.htmlEncode(result.getError())));
+            }
+        });
+    }
+}</code></pre>
+          <section id="_addTyping">
+            <h1>_addTyping</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>_addTyping()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>groovy</td>
+                <td>String</td>
+                <td><p>The query that potentially doesn&#39;t have correct typing</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>String</td>
+                <td><p>a query with correct typing.</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Adds typing and defs for query.<br />This is used internaly to allow the system to issue a long query string of queries that may not have<br />been required to use typing because they were sent individualy. (sandboxing caveats)</p></div>
+          <pre><code class="language-javascript">_addTyping(groovy) {
+    const regex = /(?:&quot;[^&quot;]*?&quot;)|(?:^|\;) ?(\w+) ?(?=\=)/gmi;
+    let pointer = 0, pointerIncr = 0, result, variables = {}, output = groovy;
+    while ( (result = regex.exec(groovy)) ) {
+        if(typeof variables[result[1]] != &quot;undefined&quot; || (result[1] != &quot;graph&quot; &amp;&amp; result[1] != &quot;g&quot; &amp;&amp; typeof result[1] != &quot;undefined&quot;))
+        {
+            pointer = result.index + pointerIncr + result[0].indexOf(result[1]);
+            output = [output.slice(0, pointer), &quot;def &quot;, output.slice(pointer)].join('');
+            pointerIncr += 4;
+            variables[result[1]] = true; // this means we've already def this variable.
+        }
+    }
+    return output;
+}
+}
+
+export default Console;</code></pre>
+          <div class="footer site-footer">
+            <div class="span site-footer-owner"><a href="https://github.com/mr-doc/mr-doc-theme-cayman">Cayman</a> is maintained by <a href="https://github.com/iwatakeshi">iwatakeshi</a>.</div>
+            <div class="span site-footer-credits">This page was generated by <a href="https://github.com/mr-doc/mr-doc">Mr. Doc</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/affix.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/scrollspy.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/prism-bash.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('body').scrollspy({
+          target: ".bs-docs-sidebar",
+          offset: 40
+        });
+        $('#sidebar').affix({
+          offset:{
+            bottom:60,
+            top: 60
+          }
+        }) 
+      });
+    </script>
+  </body>
+</html>

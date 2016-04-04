@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>gremlin-console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/cayman.css">
+    <link rel="stylesheet" href="css/prism.css">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">gremlin-console</h1>
+      <h2 class="project-tagline">Console for gremlin-server</h2><a href="https://github.com/PommeVerte/gremlin-console-js" target="_blank" class="btn">View on GitHub</a><a href="https://npmjs.com/package/gremlin-console" target="_blank" class="btn">View on npm</a>
+    </section>
+    <section data-spy="scroll" data-target=".scrollspy" class="main-content">
+      <div class="row">
+        <div class="col-md-3 col-xs-3 bs-docs-sidebar">
+          <ul id="sidebar" class="nav nav-stacked fixed">
+            <li><a href="index.html">Main</a></li>
+            <li><a href="Console.js.html">Console.js</a></li>
+            <li><a href="DriverClient.js.html">DriverClient.js</a></li>
+            <li class="active"><a href="Html.js.html">Html.js
+                <ul class="nav nav-stacked">
+                  <li><a href="#Html"><i class="alert alert-success"></i><span>Html</span></a>
+                  </li>
+                  <li><a href="#htmlEncode"><i class="alert alert-info"></i><span>htmlEncode</span></a>
+                  </li>
+                  <li><a href="#jsonSyntaxHighlight"><i class="alert alert-info"></i><span>jsonSyntaxHighlight</span></a>
+                  </li>
+                </ul></a></li>
+            <li><a href="Result.js.html">Result.js</a></li>
+            <li><a href="index.js.html">index.js</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <section id="Html">
+            <h1>Html</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">class</div><span>&nbsp;</span><span>new Html()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Helper class with HTML manipulation features</p></div>
+          <pre><code class="language-javascript">class Html {</code></pre>
+          <section id="htmlEncode">
+            <h1>htmlEncode</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Html.htmlEncode()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>string</td>
+                <td>String</td>
+                <td><p>the string to encode</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>String</td>
+                <td><p>the encoded string</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>HTML encode a string for security purposes. Should prevent XSS attacks</p></div>
+          <pre><code class="language-javascript">static htmlEncode(string) {
+    return $('&lt;div/&gt;').text(string).html();
+}</code></pre>
+          <section id="jsonSyntaxHighlight">
+            <h1>jsonSyntaxHighlight</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Html.jsonSyntaxHighlight()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>json</td>
+                <td>String, JSON</td>
+                <td><p>the json string or element to highlight</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>String</td>
+                <td><p>and html string of the json with enabled css highlighting functionality.</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Json highlighter</p></div>
+          <pre><code class="language-javascript">static jsonSyntaxHighlight(json) {
+    if (typeof json != 'string') {
+         json = JSON.stringify(json, undefined, 2);
+    }
+    json = json.replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/&gt;/g, '&amp;gt;');
+    return json.replace(/(&quot;(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\&quot;])*&quot;(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        let cls = 'number';
+        if (/^&quot;/.test(match)) {
+            if (/:$/.test(match)) {
+                cls = 'key';
+            } else {
+                cls = 'string';
+            }
+        } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+        } else if (/null/.test(match)) {
+            cls = 'null';
+        }
+        return '&lt;span class=&quot;' + cls + '&quot;&gt;' + match + '&lt;/span&gt;';
+    });
+}
+}
+
+export default Html;</code></pre>
+          <div class="footer site-footer">
+            <div class="span site-footer-owner"><a href="https://github.com/mr-doc/mr-doc-theme-cayman">Cayman</a> is maintained by <a href="https://github.com/iwatakeshi">iwatakeshi</a>.</div>
+            <div class="span site-footer-credits">This page was generated by <a href="https://github.com/mr-doc/mr-doc">Mr. Doc</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/affix.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/scrollspy.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/prism-bash.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('body').scrollspy({
+          target: ".bs-docs-sidebar",
+          offset: 40
+        });
+        $('#sidebar').affix({
+          offset:{
+            bottom:60,
+            top: 60
+          }
+        }) 
+      });
+    </script>
+  </body>
+</html>
