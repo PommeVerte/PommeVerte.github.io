@@ -255,6 +255,32 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>populateHistory()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>query</td>
+                <td>String</td>
+                <td><p>The query that was sent to the database</p></td>
+              </tr>
+              <tr>
+                <td>result</td>
+                <td>Result</td>
+                <td><p>The result sent back from the database.</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>Populate the history array</p></div>
           <pre><code class="language-javascript">populateHistory(query, result) {
      if(query != &quot;&quot;                                                                 // not an empty query

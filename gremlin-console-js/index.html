@@ -66,19 +66,20 @@ var gc = GremlinConsole.create('#console-window', '#console-input', {host: &quot
 <ul>
 <li><strong><code>host</code></strong>: The host gremlin-server can be reached on (defaults to <code>localhost</code>)</li>
 <li><strong><code>port</code></strong>: The port to connect to gremlin-server on (defaults to <code>8182</code>)</li>
-<li><strong><code>history</code></strong>: An optional <code>array</code> of history elements that can be used to populate the console on init. See the <a href="https://github.com/PommeVerte/gremlin-console-js/blob/master/examples/history.html#L117-L130">history example</a> for sample code.</li>
 <li><strong><code>driverOptions</code></strong>: An <code>map</code> of all the configuration options for the console's client. See <a href="https://github.com/jbmusso/gremlin-javascript">jbmusso/gremlin-javascript</a> for the default client.</li>
 </ul>
 <h2>Security</h2>
 <p><strong>--WARNING--</strong> Due to the nature of gremlin-console being executed locally in the browser and communicating directly with gremlin-server. If you plan on using it outside of the scope of a secure network (localhost for example) you will need to enable <a href="http://tinkerpop.apache.org/docs/3.1.1-incubating/reference/#_security">sandboxing</a> (amongst other things) on gremlin-server. This configuration is required to ensure that people running queries in the console don't get access to secure server side information.</p>
 <h2>Populating the console on init</h2>
 <p>You can prepare the state of the graph as well as the queries and results display in the console upon initializing by providing a history object in the options:</p>
-<pre><code class="language-javascript">// The following will load a modern TinkrGraph &quot;graph&quot;, and it's traversal &quot;g&quot;.
-// These will as a result become accessible in the console.
-var gc = GremlinConsole('#console-window', '#console-input', {history : [
+<pre><code class="language-javascript">// Start an instance of gremlin-console
+var gc = GremlinConsole('#console-window', '#console-input');
+// Provide a history array to populate the graph
+// In this case we create a modern graph &quot;graph&quot;, with a traversal object &quot;g&quot;.
+gc.populateDbFromHistory([
   {query: &quot;graph = TinkerFactory.createModern();&quot;, error: null, results: null},
   {query: &quot;g = graph.traversal();&quot;, error: null, results: null}
-]});
+]);
 </code></pre>
 <h2>Plugins</h2>
 <h2>API</h2>
