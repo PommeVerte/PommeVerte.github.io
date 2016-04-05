@@ -50,7 +50,7 @@ gremlin-console can :</p>
 <pre><code class="language-javascript">import GremlinConsole from 'gremlin-console';
 
 //create a console + input combo by passing css selectors to GremlinConsole
-const gc = GremlinConsole.create('#console-window', '#console-input', {host: &quot;localhost&quot;, port: 8182});
+const gc = GremlinConsole('#console-window', '#console-input', {host: &quot;localhost&quot;, port: 8182});
 </code></pre>
 <h5>In browser</h5>
 <pre><code class="language-html">&lt;head&gt;
@@ -75,7 +75,7 @@ var gc = GremlinConsole.create('#console-window', '#console-input', {host: &quot
 <p>You can prepare the state of the graph as well as the queries and results display in the console upon initializing by providing a history object in the options:</p>
 <pre><code class="language-javascript">// The following will load a modern TinkrGraph &quot;graph&quot;, and it's traversal &quot;g&quot;.
 // These will as a result become accessible in the console.
-var gc = GremlinConsole.create('#console-window', '#console-input', {history : [
+var gc = GremlinConsole('#console-window', '#console-input', {history : [
   {query: &quot;graph = TinkerFactory.createModern();&quot;, error: null, results: null},
   {query: &quot;g = graph.traversal();&quot;, error: null, results: null}
 ]});
