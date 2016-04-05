@@ -31,6 +31,8 @@
                   </li>
                   <li><a href="#buildResult"><i class="alert alert-info"></i><span>buildResult</span></a>
                   </li>
+                  <li><a href="#onError"><i class="alert alert-info"></i><span>onError</span></a>
+                  </li>
                 </ul></a></li>
             <li><a href="Html.js.html">Html.js</a></li>
             <li><a href="Result.js.html">Result.js</a></li>
@@ -178,6 +180,38 @@
           <div class="description"><p>Build a result</p></div>
           <pre><code class="language-javascript">buildResult(err, results) {
     return new Result(err, results);
+}</code></pre>
+          <section id="onError">
+            <h1>onError</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>onError()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>callback</td>
+                <td>Function</td>
+                <td><p>the method to run on client error.</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Register a callback on error<br />It&#39;s rare to need this but sometimes you&#39;ll want to register a sepcific behavior against the client&#39;s error management</p></div>
+          <pre><code class="language-javascript">onError(callback) {
+    this.client.on('error', callback);
 }
 }
 

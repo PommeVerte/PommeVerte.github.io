@@ -26,6 +26,8 @@
                   </li>
                   <li><a href="#constructor"><i class="alert alert-success"></i><span>constructor</span></a>
                   </li>
+                  <li><a href="#initClient"><i class="alert alert-info"></i><span>initClient</span></a>
+                  </li>
                   <li><a href="#executeQuery"><i class="alert alert-info"></i><span>executeQuery</span></a>
                   </li>
                   <li><a href="#handleResults"><i class="alert alert-info"></i><span>handleResults</span></a>
@@ -117,7 +119,6 @@
     this.options = {
         port: 8182,
         host: 'localhost',
-        history: [],
         driverOptions: {
             session: true
         },
@@ -126,27 +127,33 @@
         ...options
     }
 
-    //lets init the client
-    this.client = new Client(this.options.host, this.options.port, this.options.driverOptions);
-
     this._attachHandlers();
 
     //lets set up events
-    this.client.client.on('error', (err)=&gt;{ // bubble up errors
-        this.emit('error', err);
-    });
     this.on('error', (err)=&gt;{
         console.log(err);
     });
     this.on('results', (query, result)=&gt;{
         this.handleResults(query, result);
     });
+}</code></pre>
+          <section id="initClient">
+            <h1>initClient</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>initClient()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Opens a connection with the client<br />This is seperated and only called on query so that the user can interact and change settings/plugins<br />after initializing the Console and still affect the client with those changes.</p><p>This also has the potential to reconnect a disconnected client.</p></div>
+          <pre><code class="language-javascript">initClient() {
+    if(!this.client) {
+        //lets init the client
+        this.client = new Client(this.options.host, this.options.port, this.options.driverOptions);
 
-    //lets populate history properly if it isn't empty
-    if(typeof this.options.history[0] !== 'undefined') {
-        this.history = this.options.history;
-        this.historyPointer = this.history.length;
-        this.populateDbFromHistory();
+        //lets set up events
+        this.client.onError((err)=&gt;{ // bubble up errors
+            this.emit('error', err);
+        });
     }
 }</code></pre>
           <section id="executeQuery">
@@ -179,6 +186,7 @@
           </table>
           <div class="description"><p>Runs a gremlin query against gremlin-server</p></div>
           <pre><code class="language-javascript">executeQuery(query) {
+    this.initClient();
     this.client.execute(query, (result) =&gt; {
         this.emit('results', query, result);
     });
@@ -375,34 +383,63 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>populateDbFromHistory()</span><span>&nbsp;</span>
             </p>
           </section>
-          <div class="description"><p>Populates the state of the graph from the history.<br />This essentially re-runs all the history queries so that all session variables and graph state exist.</p></div>
-          <pre><code class="language-javascript">populateDbFromHistory() {
-    if(typeof this.history[0].query !== 'undefined') {
-        //lets take all queries and bunch them together to recreate env
-        let query = '';
-        for (let i = 0; (i &lt; this.history.length - 1); i++) {
-            let result = this.client.buildResult(this.history[i].error, this.history[i].results);
-            this.handleResults(this.history[i].query, result, false); // don't emit('results') as some plugins may generate viz on each call.
-            if(typeof result.getError() === 'undefined' || result.getError() == '' || result.getError() == null)
-                query += this.history[i].query + &quot;;&quot;;
-        }
-        //add typing to avoid strange db errors due to sandboxing
-        query = this._addTyping(query);
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>history</td>
+                <td>Array</td>
+                <td><p>the history we want to re-run.</p></td>
+              </tr>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Populates the state of the graph from the provided history.<br />This essentially re-runs all the history queries so that all session variables and graph state exist.</p></div>
+          <pre><code class="language-javascript">populateDbFromHistory(history = []) {
 
-        //execute the bundled query
-        this.client.execute(query, (result) =&gt; {
-            if(!result.getError())
-            {
-                if(this.history.length &gt; 0) {
-                    //here we need to remove the last history item since we are going to apply it again.
-                    var lastHistory = this.history.splice(-1,1);
-                    this.executeQuery(lastHistory[0].query);
-                }
-            } else {
-                console.log(&quot;Your initializing script produced an error : \n&quot; + result.getError());
-                this.emit('error', new Error( &quot;Your initializing script produced an error : \n&quot; + Html.htmlEncode(result.getError())));
+    //lets populate history properly if it isn't empty
+    if(history.length &gt; 0 &amp;&amp; this.history.length &lt; 1) {
+        this.history = history;
+        this.historyPointer = history.length;
+        this.populateDbFromHistory();
+
+        if(typeof this.history[0].query !== 'undefined') {
+            this.initClient();
+            //lets take all queries and bunch them together to recreate env
+            let query = '';
+            for (let i = 0; (i &lt; this.history.length - 1); i++) {
+                let result = this.client.buildResult(this.history[i].error, this.history[i].results);
+                this.handleResults(this.history[i].query, result, false); // don't emit('results') as some plugins may generate viz on each call.
+                if(typeof result.getError() === 'undefined' || result.getError() == '' || result.getError() == null)
+                    query += this.history[i].query + &quot;;&quot;;
             }
-        });
+            //add typing to avoid strange db errors due to sandboxing
+            query = this._addTyping(query);
+
+            //execute the bundled query
+            this.client.execute(query, (result) =&gt; {
+                if(!result.getError())
+                {
+                    if(this.history.length &gt; 0) {
+                        //here we need to remove the last history item since we are going to apply it again.
+                        var lastHistory = this.history.splice(-1,1);
+                        this.executeQuery(lastHistory[0].query);
+                    }
+                } else {
+                    this.emit('error', new Error( &quot;Your initializing script produced an error : \n&quot; + Html.htmlEncode(result.getError())));
+                }
+            });
+        }
     }
 }</code></pre>
           <section id="_addTyping">
