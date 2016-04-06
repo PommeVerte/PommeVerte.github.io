@@ -47,7 +47,7 @@
                 </ul></a></li>
             <li><a href="DriverClient.js.html">DriverClient.js</a></li>
             <li><a href="Html.js.html">Html.js</a></li>
-            <li><a href="Result.js.html">Result.js</a></li>
+            <li><a href="Parser.js.html">Parser.js</a></li>
             <li><a href="index.js.html">index.js</a></li>
           </ul>
         </div>
@@ -69,6 +69,8 @@
           <pre><code class="language-javascript">inputElement;</code></pre>
           <div class="description"></div>
           <pre><code class="language-javascript">client;</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">parser;</code></pre>
           <div class="description"></div>
           <pre><code class="language-javascript">history = [];</code></pre>
           <div class="description"></div>
@@ -129,12 +131,15 @@
 
     this._attachHandlers();
 
+    //set default parser up
+    this.parser = new Parser();
+
     //lets set up events
     this.on('error', (err)=&gt;{
         console.log(err);
     });
-    this.on('results', (query, result)=&gt;{
-        this.handleResults(query, result);
+    this.on('results', (query, parser)=&gt;{
+        this.handleResults(query, parser);
     });
 }</code></pre>
           <section id="initClient">
@@ -148,7 +153,7 @@
           <pre><code class="language-javascript">initClient() {
     if(!this.client) {
         //lets init the client
-        this.client = new Client(this.options.host, this.options.port, this.options.driverOptions);
+        this.client = new Client(this.options.host, this.options.port, this.options.driverOptions, this.parser);
 
         //lets set up events
         this.client.onError((err)=&gt;{ // bubble up errors
@@ -187,8 +192,8 @@
           <div class="description"><p>Runs a gremlin query against gremlin-server</p></div>
           <pre><code class="language-javascript">executeQuery(query) {
     this.initClient();
-    this.client.execute(query, (result) =&gt; {
-        this.emit('results', query, result);
+    this.client.execute(query, (parser) =&gt; {
+        this.emit('results', query, parser);
     });
 }</code></pre>
           <section id="handleResults">
@@ -213,9 +218,9 @@
                 <td><p>The query run against db</p></td>
               </tr>
               <tr>
-                <td>result</td>
-                <td>Result</td>
-                <td><p>The database result object</p></td>
+                <td>parser</td>
+                <td>Parser</td>
+                <td><p>The database parser object</p></td>
               </tr>
               <tr>
                 <td>recordHistory</td>
@@ -230,22 +235,22 @@
             </tbody>
           </table>
           <div class="description"><p>Applies logic based on results</p></div>
-          <pre><code class="language-javascript">handleResults(query, result, recordHistory = true) {
+          <pre><code class="language-javascript">handleResults(query, parser, recordHistory = true) {
     //add results to window
     let response = $('&lt;div&gt;').addClass('port-section');
     response.append($('&lt;div&gt;').addClass(&quot;port-query&quot;).html('gremlin&gt; ' + Html.htmlEncode(query)));
 
-    if(!result.getError()) {
-        response.append(result.getHtmlResults());
+    if(!parser.getError()) {
+        response.append(parser.getHtmlResults());
     } else {
-        response.append(result.getHtmlError());
+        response.append(parser.getHtmlError());
     }
 
     this.windowElement.append(response);
     this.windowElement.animate({ scrollTop: this.windowElement[0].scrollHeight }, &quot;slow&quot;);
     //add results to history
     if(recordHistory) {
-        this.populateHistory(query, result);
+        this.populateHistory(query, parser);
     }
 }</code></pre>
           <section id="populateHistory">
@@ -270,9 +275,9 @@
                 <td><p>The query that was sent to the database</p></td>
               </tr>
               <tr>
-                <td>result</td>
-                <td>Result</td>
-                <td><p>The result sent back from the database.</p></td>
+                <td>parser</td>
+                <td>Parser</td>
+                <td><p>The parser sent back from the database.</p></td>
               </tr>
               <tr>
                 <td>return</td>
@@ -282,17 +287,17 @@
             </tbody>
           </table>
           <div class="description"><p>Populate the history array</p></div>
-          <pre><code class="language-javascript">populateHistory(query, result) {
+          <pre><code class="language-javascript">populateHistory(query, parser) {
      if(query != &quot;&quot;                                                                 // not an empty query
         &amp;&amp; (
-            !result.getError()
+            !parser.getError()
             || (
                 typeof this.history[this.history.length - 1] == 'undefined'     // if error then don't save the same query multiple
                 || query != this.history[this.history.length - 1].query         // times.
                 )
             )
         ) {
-        this.history.push($.extend({query: query}, result.getHistory()));
+        this.history.push($.extend({query: query}, parser.getHistory()));
     }
     this.historyPointer = this.history.length;
 }</code></pre>
@@ -310,7 +315,7 @@
     //Lets attach the enter key down handler
     this.inputElement.keypress(function(e) {
         if(e.which == 13) {
-            var result = widget.executeQuery($(this).val());
+            widget.executeQuery($(this).val());
             $(this).val('');
         }
     });
@@ -444,17 +449,17 @@
             //lets take all queries and bunch them together to recreate env
             let query = '';
             for (let i = 0; (i &lt; this.history.length - 1); i++) {
-                let result = this.client.buildResult(this.history[i].error, this.history[i].results);
-                this.handleResults(this.history[i].query, result, false); // don't emit('results') as some plugins may generate viz on each call.
-                if(typeof result.getError() === 'undefined' || result.getError() == '' || result.getError() == null)
+                let parser = this.parser.create(this.history[i].error, this.history[i].results); // creates a Parser
+                this.handleResults(this.history[i].query, parser, false); // don't emit('results') as some plugins may generate viz on each call.
+                if(typeof parser.getError() === 'undefined' || parser.getError() == '' || parser.getError() == null)
                     query += this.history[i].query + &quot;;&quot;;
             }
             //add typing to avoid strange db errors due to sandboxing
             query = this._addTyping(query);
 
             //execute the bundled query
-            this.client.execute(query, (result) =&gt; {
-                if(!result.getError())
+            this.client.execute(query, (parser) =&gt; {
+                if(!parser.getError())
                 {
                     if(this.history.length &gt; 0) {
                         //here we need to remove the last history item since we are going to apply it again.
@@ -462,7 +467,7 @@
                         this.executeQuery(lastHistory[0].query);
                     }
                 } else {
-                    this.emit('error', new Error( &quot;Your initializing script produced an error : \n&quot; + Html.htmlEncode(result.getError())));
+                    this.emit('error', new Error( &quot;Your initializing script produced an error : \n&quot; + Html.htmlEncode(parser.getError())));
                 }
             });
         }

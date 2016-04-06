@@ -29,13 +29,11 @@
                   </li>
                   <li><a href="#execute"><i class="alert alert-info"></i><span>execute</span></a>
                   </li>
-                  <li><a href="#buildResult"><i class="alert alert-info"></i><span>buildResult</span></a>
-                  </li>
                   <li><a href="#onError"><i class="alert alert-info"></i><span>onError</span></a>
                   </li>
                 </ul></a></li>
             <li><a href="Html.js.html">Html.js</a></li>
-            <li><a href="Result.js.html">Result.js</a></li>
+            <li><a href="Parser.js.html">Parser.js</a></li>
             <li><a href="index.js.html">index.js</a></li>
           </ul>
         </div>
@@ -51,6 +49,8 @@
           <pre><code class="language-javascript">class DriverClient {</code></pre>
           <div class="description"></div>
           <pre><code class="language-javascript">client;</code></pre>
+          <div class="description"></div>
+          <pre><code class="language-javascript">parser;</code></pre>
           <section id="constructor">
             <h1>constructor</h1>
             <h5 class="subheader"></h5>
@@ -90,7 +90,12 @@
             </tbody>
           </table>
           <div class="description"><p>Create the client</p></div>
-          <pre><code class="language-javascript">constructor(host = &quot;localhost&quot;, port = 8182, options = {}) {
+          <pre><code class="language-javascript">constructor(host, port, options, parser) {
+    if(typeof parser === &quot;undefined&quot;) {
+        this.parser = new Parser();
+    } else {
+        this.parser = parser;
+    }
     this.client = GremlinDriver.createClient(port, host, options);
 }</code></pre>
           <section id="execute">
@@ -138,48 +143,11 @@
         bindings = {};
     }
 
-    //customize the callback params to use Result
+    //customize the callback params to use Parser
     const customCallback = (err, results) =&gt; {
-        callback(this.buildResult(err, results));
+        callback(this.parser.create(err, results));
     };
     this.client.execute(query, bindings, customCallback);
-}</code></pre>
-          <section id="buildResult">
-            <h1>buildResult</h1>
-            <h5 class="subheader"></h5>
-            <p>
-              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>buildResult()</span><span>&nbsp;</span>
-            </p>
-          </section>
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th style="width:20%">Option name</th>
-                <th style="width:20%">Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>err</td>
-                <td>Object</td>
-                <td><p>Error from the driver.</p></td>
-              </tr>
-              <tr>
-                <td>results</td>
-                <td>String</td>
-                <td><p>A response result string</p></td>
-              </tr>
-              <tr>
-                <td>return</td>
-                <td>Result</td>
-                <td><p>a result object</p></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="description"><p>Build a result</p></div>
-          <pre><code class="language-javascript">buildResult(err, results) {
-    return new Result(err, results);
 }</code></pre>
           <section id="onError">
             <h1>onError</h1>
