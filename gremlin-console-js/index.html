@@ -69,7 +69,8 @@ var gc = GremlinConsole.create('#console-window', '#console-input', {host: &quot
 <li><strong><code>driverOptions</code></strong>: An <code>map</code> of all the configuration options for the console's client. See <a href="https://github.com/jbmusso/gremlin-javascript">jbmusso/gremlin-javascript</a> for the default client.</li>
 </ul>
 <h2>Security</h2>
-<p><strong>--WARNING--</strong> Due to the nature of gremlin-console being executed locally in the browser and communicating directly with gremlin-server. If you plan on using it outside of the scope of a secure network (localhost for example) you will need to enable <a href="http://tinkerpop.apache.org/docs/3.1.1-incubating/reference/#_security">sandboxing</a> (amongst other things) on gremlin-server. This configuration is required to ensure that people running queries in the console don't get access to secure server side information.</p>
+<p><strong>--WARNING--</strong> Due to the nature of gremlin-console being executed locally in the browser and communicating directly with gremlin-server, there are some security implications. If you can't trust your users or are using <code>gremlin-console-js</code> outside of the scope of a secure network (ie : public network) you will need to enable <a href="http://tinkerpop.apache.org/docs/3.1.1-incubating/reference/#_security">sandboxing</a> (amongst other things) on gremlin-server. This configuration is required to ensure that people running queries in the console don't get access to secure server side information.</p>
+<p>Another option (though not a replacement to sandboxing) is to use <code>gc-ajax-plugin</code> which will allow you not to expose the gremlin-server websocket. This has more overhead but it will provid the added benefit that you can handle Authentication and Authorization on your server app level. <em>(see plugin section)</em></p>
 <h2>Populating the console on init</h2>
 <p>You can prepare the state of the graph as well as the queries and results display in the console upon initializing by providing a history object in the options:</p>
 <pre><code class="language-javascript">// Start an instance of gremlin-console
@@ -77,11 +78,18 @@ var gc = GremlinConsole('#console-window', '#console-input');
 // Provide a history array to populate the graph
 // In this case we create a modern graph &quot;graph&quot;, with a traversal object &quot;g&quot;.
 gc.populateDbFromHistory([
-  {query: &quot;graph = TinkerFactory.createModern();&quot;, error: null, results: null},
-  {query: &quot;g = graph.traversal();&quot;, error: null, results: null}
+  {query: &quot;graph = TinkerFactory.createModern();&quot;, error: undefined, results: [null]},
+  {query: &quot;g = graph.traversal();&quot;, error: undefined, results: [null]}
 ]);
 </code></pre>
+<p><em>What happens under the hood : gremlin-console will concatenate the n-1 queries from the provided history and submit them to the server. Essentially setting the graph's state. Then it will rerun the last query so as to trigger the proper events.</em></p>
 <h2>Plugins</h2>
+<p>The following plugins are currently available for <code>gremlin-console</code> :</p>
+<ul>
+<li><a href="https://github.com/PommeVerte/gc-graphson-text-plugin"><code>gc-graphson-text-plugin</code></a> : Modifies the output display. Makes the console show the results in the same way the Apache TinkerPop terminal console displays it's results.</li>
+<li><a href="https://github.com/PommeVerte/gc-ajax-plugin"><code>gc-ajax-plugin</code></a> : Makes <code>gremlin-console</code> run it's queries against an <code>http</code> web page instead of directly against the gremlin-server's <code>websocket</code>. This can help provide more control over Authentication and Authorization of users on your website.</li>
+<li><a href="https://github.com/PommeVerte/gc-cytoscape-plugin"><code>gc-cytoscape-plugin</code></a> : <strong>highly experimental</strong> A graph visualization tool for <code>gremlin-console</code>. This is only useful for very small data sets.</li>
+</ul>
 <h2>API</h2>
 <p>You can find the API <a href="http://pommeverte.github.io/gremlin-console-js/">here</a>.</p>
 <h2>misc</h2>
