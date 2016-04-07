@@ -83,6 +83,25 @@ gc.populateDbFromHistory([
 ]);
 </code></pre>
 <p><em>What happens under the hood : gremlin-console will concatenate the n-1 queries from the provided history and submit them to the server. Essentially setting the graph's state. Then it will rerun the last query so as to trigger the proper events.</em></p>
+<h2>Events</h2>
+<p>You can register lambdas against events as follows :</p>
+<pre><code class="language-javascript">const gc = GremlinConsole('#console-window', '#console-input', {host: &quot;localhost&quot;, port: 8182});
+gc.on('results', (err, result) =&gt; {});
+</code></pre>
+<p>There are currently only two supported events :</p>
+<ul>
+<li><strong>results</strong> is triggered when the client receives a response from the server. It provides the following params:
+<ul>
+<li><code>err</code> : An object with an <code>err.message</code> property.</li>
+<li><code>result</code> : A <code>Parser</code> object.</li>
+</ul>
+</li>
+<li><strong>error</strong> is triggered when a structural error occurs (different from a query error). It provides the following params:
+<ul>
+<li><code>err</code> : An <code>Error</code> object.</li>
+</ul>
+</li>
+</ul>
 <h2>Plugins</h2>
 <p>The following plugins are currently available for <code>gremlin-console</code> :</p>
 <ul>
@@ -90,6 +109,7 @@ gc.populateDbFromHistory([
 <li><a href="https://github.com/PommeVerte/gc-ajax-plugin"><code>gc-ajax-plugin</code></a> : Makes <code>gremlin-console</code> run it's queries against an <code>http</code> web page instead of directly against the gremlin-server's <code>websocket</code>. This can help provide more control over Authentication and Authorization of users on your website.</li>
 <li><a href="https://github.com/PommeVerte/gc-cytoscape-plugin"><code>gc-cytoscape-plugin</code></a> : <strong>highly experimental</strong> A graph visualization tool for <code>gremlin-console</code>. This is only useful for very small data sets.</li>
 </ul>
+<p>If you're interested in developping plugins check the <a href="docs/Plugins.md">plugin documentation</a>.</p>
 <h2>API</h2>
 <p>You can find the API <a href="http://pommeverte.github.io/gremlin-console-js/">here</a>.</p>
 <h2>misc</h2>
