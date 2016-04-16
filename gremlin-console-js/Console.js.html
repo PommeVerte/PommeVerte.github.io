@@ -159,6 +159,9 @@
         this.client.onError((err)=&gt;{ // bubble up errors
             this.emit('error', err);
         });
+        this.client.onOpen(()=&gt;{ // bubble up errors
+            this.emit('open');
+        });
     }
 }</code></pre>
           <section id="executeQuery">
