@@ -4,11 +4,12 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="en" />
-        <link href="./assets/8af55069/css/bootstrap.css" rel="stylesheet">
-<link href="./assets/43ec8f5b/style.css" rel="stylesheet">
-<script src="./assets/aed41e88/jquery.js"></script>
-<script src="./assets/8af55069/js/bootstrap.js"></script>
-<script src="./assets/9c80ae2f/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
+        <link href="./assets/83431c42/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/dad35df9/solarized_light.css" rel="stylesheet">
+<link href="./assets/a7428edc/style.css" rel="stylesheet">
+<script src="./assets/616a4310/jquery.js"></script>
+<script src="./assets/83431c42/js/bootstrap.js"></script>
+<script src="./assets/f3a05915/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
@@ -40,7 +41,7 @@
 <a class="list-group-item" href="./brightzone-gremlindriver-serializers-serializerinterface.html">SerializerInterface</a></div></div>    </div>
     <div class="col-md-9 api-content" role="main">
         <h1>Class Brightzone\GremlinDriver\Connection</h1>
-<div id="nav">
+<div class="top-nav">
     <a href="index.html">All Classes</a>
             | <a href="#properties">Properties</a>
                 | <a href="#methods">Methods</a>
@@ -54,18 +55,18 @@
             <tr><th>Inheritance</th><td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td></tr>
                                         </table>
 
-<div id="classDescription">
+<div class="class-description">
     <p><strong>Gremlin-server PHP Driver client Connection class</strong></p>
     <p>Example of basic use:</p>
-<pre><code>$connection = new Connection(['host' =&gt; 'localhost']);
-$connection-&gt;open();
-$resultSet = $connection-&gt;send('g.V'); //returns array with results
+<pre><code class="hljs php"><span class="hljs-variable">$connection</span> = <span class="hljs-keyword">new</span> Connection([<span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'localhost'</span>]);
+<span class="hljs-variable">$connection</span>-&gt;open();
+<span class="hljs-variable">$resultSet</span> = <span class="hljs-variable">$connection</span>-&gt;send(<span class="hljs-string">'g.V'</span>); <span class="hljs-comment">//returns array with results</span>
 </code></pre>
 <p>Some more customising of message to send can be done with the message object</p>
-<pre><code>$connection = new Connection(['host' =&gt; 'localhost']);
-$connection-&gt;open();
-$connection-&gt;message-&gt;gremlin = 'g.V';
-$connection-&gt;send();
+<pre><code class="hljs php"><span class="hljs-variable">$connection</span> = <span class="hljs-keyword">new</span> Connection([<span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'localhost'</span>]);
+<span class="hljs-variable">$connection</span>-&gt;open();
+<span class="hljs-variable">$connection</span>-&gt;message-&gt;gremlin = <span class="hljs-string">'g.V'</span>;
+<span class="hljs-variable">$connection</span>-&gt;send();
 </code></pre>
 <p>See Message for more details</p>
 
@@ -88,10 +89,10 @@ $connection-&gt;send();
 <tr>
   <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
 </tr>
-            <tr id="$bindings">
-        <td><a href="brightzone-gremlindriver-connection.html#$bindings-detail">$bindings</a></td>
+            <tr id="$aliases">
+        <td><a href="brightzone-gremlindriver-connection.html#$aliases-detail">$aliases</a></td>
         <td><a href="http://www.php.net/language.types.array">array</a></td>
-        <td>Bindings for the gremlin script</td>
+        <td>Aliases to be used for this connection.</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
             <tr id="$emptySet">
@@ -145,6 +146,12 @@ Default : 8182</td>
         <td>Strategy to use for retry</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
+            <tr id="$saslMechanism">
+        <td><a href="brightzone-gremlindriver-connection.html#$saslMechanism-detail">$saslMechanism</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Which sasl mechanism to use for authentication.</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
             <tr id="$ssl">
         <td><a href="brightzone-gremlindriver-connection.html#$ssl-detail">$ssl</a></td>
         <td>bool|<a href="http://www.php.net/language.types.array">array</a></td>
@@ -187,7 +194,7 @@ Default : 8182</td>
         <td>Rexpro socket connection</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
-                                                    </table>
+                                                        </table>
 </div>
 
 <a id="methods"></a>
@@ -221,6 +228,12 @@ provide it with a default serializer.</td>
         <td><a href="brightzone-gremlindriver-connection.html#close()-detail">close()</a></td>
         <td>Close connection to server
 This closes the current session on the server then closes the socket</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
+            <tr id="closeSession()">
+        <td><a href="brightzone-gremlindriver-connection.html#closeSession()-detail">closeSession()</a></td>
+        <td>Closes an open session if it exists
+You can use this to close open sessions on the server end. This allows to free up threads on the server end.</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
             <tr id="getSession()">
@@ -290,7 +303,7 @@ This closes the current session on the server then closes the socket</td>
         <td>Builds an authentication message when challenged by the server</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
-                            <tr id="makeHandshake()">
+                                <tr id="makeHandshake()">
         <td><a href="brightzone-gremlindriver-connection.html#makeHandshake()-detail">makeHandshake()</a></td>
         <td>Make Original handshake with the server</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
@@ -315,199 +328,244 @@ This closes the current session on the server then closes the socket</td>
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$_socket-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $_socket        <span class="detailHeaderTag small">
-            protected                                    property
+        $_socket        <span class="detail-header-tag small">
+            protected                                                property
                     </span>
     </div>
 
-    <div class="signature"><a href="http://www.php.net/language.types.resource">resource</a> <a href="brightzone-gremlindriver-connection.html#$_socket-detail">$_socket</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="doc-description">
+        <p>Rexpro socket connection</p>
 
-    <p>Rexpro socket connection</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.resource">resource</a></span> <a href="brightzone-gremlindriver-connection.html#$_socket-detail">$_socket</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
 
-    <div class="detail-header h3" id="$bindings-detail">
+
+    <div class="detail-header h3" id="$aliases-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
-        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$bindings-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$aliases-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $bindings        <span class="detailHeaderTag small">
-            public                                    property
+        $aliases        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature"><a href="http://www.php.net/language.types.array">array</a> <a href="brightzone-gremlindriver-connection.html#$bindings-detail">$bindings</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="doc-description">
+        <p>Aliases to be used for this connection.
+Allows users to set up whichever character on the db end such as "g" and reference it with another alias.</p>
 
-    <p>Bindings for the gremlin script</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-connection.html#$aliases-detail">$aliases</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+
 
     <div class="detail-header h3" id="$emptySet-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$emptySet-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $emptySet        <span class="detailHeaderTag small">
-            public                                    property
+        $emptySet        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature">bool <a href="brightzone-gremlindriver-connection.html#$emptySet-detail">$emptySet</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
-
-    <p>Whether or not the driver should return empty result sets as an empty array
+    <div class="doc-description">
+        <p>Whether or not the driver should return empty result sets as an empty array
 (the default behavior is to propagate the exception from the server - yes the server throws exceptions on empty result sets.)</p>
 
-    
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <a href="brightzone-gremlindriver-connection.html#$emptySet-detail">$emptySet</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
+
 
     <div class="detail-header h3" id="$graph-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$graph-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $graph        <span class="detailHeaderTag small">
-            public                                    property
+        $graph        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature"><a href="http://www.php.net/language.types.string">string</a> <a href="brightzone-gremlindriver-connection.html#$graph-detail">$graph</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="doc-description">
+        <p>The graph to use.</p>
 
-    <p>The graph to use.</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-gremlindriver-connection.html#$graph-detail">$graph</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
 
     <div class="detail-header h3" id="$host-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$host-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $host        <span class="detailHeaderTag small">
-            public                                    property
+        $host        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature"><a href="http://www.php.net/language.types.string">string</a> <a href="brightzone-gremlindriver-connection.html#$host-detail">$host</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'localhost'</span></div>
-
-    <p>Contains the host information required to connect to the database.</p>
+    <div class="doc-description">
+        <p>Contains the host information required to connect to the database.</p>
 <p>Default: localhost</p>
 
-    
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-gremlindriver-connection.html#$host-detail">$host</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'localhost'</span></div>
+
 
     <div class="detail-header h3" id="$message-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$message-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $message        <span class="detailHeaderTag small">
-            public                                    property
+        $message        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature"><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a> <a href="brightzone-gremlindriver-connection.html#$message-detail">$message</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="doc-description">
+        <p>Message object</p>
 
-    <p>Message object</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></span> <a href="brightzone-gremlindriver-connection.html#$message-detail">$message</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
 
     <div class="detail-header h3" id="$password-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$password-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $password        <span class="detailHeaderTag small">
-            public                                    property
+        $password        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature"><a href="http://www.php.net/language.types.string">string</a> <a href="brightzone-gremlindriver-connection.html#$password-detail">$password</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="doc-description">
+        <p>The password for establishing DB connection. Defaults to NULL.</p>
 
-    <p>The password for establishing DB connection. Defaults to NULL.</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-gremlindriver-connection.html#$password-detail">$password</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
 
     <div class="detail-header h3" id="$port-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$port-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $port        <span class="detailHeaderTag small">
-            public                                    property
+        $port        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature"><a href="http://www.php.net/language.types.string">string</a> <a href="brightzone-gremlindriver-connection.html#$port-detail">$port</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">8182</span></div>
-
-    <p>Contains port information to connect to the database</p>
+    <div class="doc-description">
+        <p>Contains port information to connect to the database</p>
 <p>Default : 8182</p>
 
-    
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-gremlindriver-connection.html#$port-detail">$port</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">8182</span></div>
+
 
     <div class="detail-header h3" id="$retryAttempts-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$retryAttempts-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $retryAttempts        <span class="detailHeaderTag small">
-            public                                    property
+        $retryAttempts        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature">\Brightzone\GremlinDriver\the <a href="brightzone-gremlindriver-connection.html#$retryAttempts-detail">$retryAttempts</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span></div>
+    <div class="doc-description">
+        <p>Number of attempts before total failure</p>
 
-    <p>Number of attempts before total failure</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">\Brightzone\GremlinDriver\the</span> <a href="brightzone-gremlindriver-connection.html#$retryAttempts-detail">$retryAttempts</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span></div>
+
 
     <div class="detail-header h3" id="$retryStrategy-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$retryStrategy-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $retryStrategy        <span class="detailHeaderTag small">
-            public                                    property
+        $retryStrategy        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature">\Brightzone\GremlinDriver\the <a href="brightzone-gremlindriver-connection.html#$retryStrategy-detail">$retryStrategy</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'linear'</span></div>
+    <div class="doc-description">
+        <p>Strategy to use for retry</p>
 
-    <p>Strategy to use for retry</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">\Brightzone\GremlinDriver\the</span> <a href="brightzone-gremlindriver-connection.html#$retryStrategy-detail">$retryStrategy</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'linear'</span></div>
+
+
+    <div class="detail-header h3" id="$saslMechanism-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$saslMechanism-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $saslMechanism        <span class="detail-header-tag small">
+            public                                                property
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p>Which sasl mechanism to use for authentication. Can be either PLAIN or GSSAPI.
+This is ignored by gremlin-server by default but some custom server implementations may use this</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-gremlindriver-connection.html#$saslMechanism-detail">$saslMechanism</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"PLAIN"</span></div>
+
 
     <div class="detail-header h3" id="$ssl-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$ssl-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $ssl        <span class="detailHeaderTag small">
-            public                                    property
+        $ssl        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature">bool|<a href="http://www.php.net/language.types.array">array</a> <a href="brightzone-gremlindriver-connection.html#$ssl-detail">$ssl</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
+    <div class="doc-description">
+        <p>Whether or not we're using ssl. If an array is set it should correspond to a stream_context_create() array.</p>
 
-    <p>Whether or not we're using ssl. If an array is set it should correspond to a stream_context_create() array.</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool|<a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-connection.html#$ssl-detail">$ssl</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
+
 
     <div class="detail-header h3" id="$timeout-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$timeout-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $timeout        <span class="detailHeaderTag small">
-            public                                    property
+        $timeout        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature"><a href="http://www.php.net/language.types.float">float</a> <a href="brightzone-gremlindriver-connection.html#$timeout-detail">$timeout</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="doc-description">
+        <p>Timeout to use for connection to Rexster. If not set the timeout set in php.ini will be used: ini_get("default_socket_timeout")</p>
 
-    <p>Timeout to use for connection to Rexster. If not set the timeout set in php.ini will be used: ini_get("default_socket_timeout")</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.float">float</a></span> <a href="brightzone-gremlindriver-connection.html#$timeout-detail">$timeout</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
 
     <div class="detail-header h3" id="$username-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$username-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
-        $username        <span class="detailHeaderTag small">
-            public                                    property
+        $username        <span class="detail-header-tag small">
+            public                                                property
                     </span>
     </div>
 
-    <div class="signature"><a href="http://www.php.net/language.types.string">string</a> <a href="brightzone-gremlindriver-connection.html#$username-detail">$username</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="doc-description">
+        <p>The username for establishing DB connection. Defaults to NULL.</p>
 
-    <p>The username for establishing DB connection. Defaults to NULL.</p>
+            </div>
 
-    
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-gremlindriver-connection.html#$username-detail">$username</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
 </div>
 <h2>Method Details</h2>
 
@@ -519,7 +577,7 @@ This closes the current session on the server then closes the socket</td>
         
         __construct()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -531,7 +589,7 @@ provide it with a default serializer.</strong></p>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-connection.html#__construct()-detail">__construct</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-connection.html#__construct()-detail">__construct</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
                   <td class="param-type-col"></td>
@@ -547,7 +605,7 @@ provide it with a default serializer.</strong></p>
         
         __destruct()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -558,7 +616,7 @@ provide it with a default serializer.</strong></p>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-connection.html#__destruct()-detail">__destruct</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-connection.html#__destruct()-detail">__destruct</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -569,7 +627,7 @@ provide it with a default serializer.</strong></p>
         
         authenticate()
         <span class="detail-header-tag small">
-            protected            method
+            protected                                    method
                     </span>
     </div>
 
@@ -580,7 +638,7 @@ provide it with a default serializer.</strong></p>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-connection.html#authenticate()-detail">authenticate</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-connection.html#authenticate()-detail">authenticate</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -591,7 +649,7 @@ provide it with a default serializer.</strong></p>
         
         close()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -603,7 +661,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">bool <strong><a href="brightzone-gremlindriver-connection.html#close()-detail">close</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#close()-detail">close</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col">bool</td>
@@ -614,13 +672,36 @@ This closes the current session on the server then closes the socket</strong></p
 
 <!--	-->
 
+    <div class="detail-header h3" id="closeSession()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#closeSession()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        closeSession()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    <div class="doc-description">
+        <p><strong>Closes an open session if it exists
+You can use this to close open sessions on the server end. This allows to free up threads on the server end.</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-connection.html#closeSession()-detail">closeSession</a></strong> ( )</td></tr>
+            </table>
+
+<!--	-->
+
     <div class="detail-header h3" id="getSession()-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#getSession()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
         
         getSession()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -631,7 +712,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.string">string</a> <strong><a href="brightzone-gremlindriver-connection.html#getSession()-detail">getSession</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-connection.html#getSession()-detail">getSession</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
@@ -648,7 +729,7 @@ This closes the current session on the server then closes the socket</strong></p
         
         inTransaction()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -659,7 +740,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">bool <strong><a href="brightzone-gremlindriver-connection.html#inTransaction()-detail">inTransaction</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#inTransaction()-detail">inTransaction</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col">bool</td>
@@ -676,7 +757,7 @@ This closes the current session on the server then closes the socket</strong></p
         
         isConnected()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -687,7 +768,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">bool <strong><a href="brightzone-gremlindriver-connection.html#isConnected()-detail">isConnected</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#isConnected()-detail">isConnected</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col">bool</td>
@@ -704,7 +785,7 @@ This closes the current session on the server then closes the socket</strong></p
         
         makeHandshake()
         <span class="detail-header-tag small">
-            protected            method
+            protected                                    method
                     </span>
     </div>
 
@@ -715,7 +796,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">bool <strong><a href="brightzone-gremlindriver-connection.html#makeHandshake()-detail">makeHandshake</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$origin&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE&nbsp;</span><span style="color: #007700">)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#makeHandshake()-detail">makeHandshake</a></strong> ( <span style="color: #0000BB">$origin&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$origin</span></td>
                   <td class="param-type-col">bool</td>
@@ -738,7 +819,7 @@ This closes the current session on the server then closes the socket</strong></p
         
         open()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -749,7 +830,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">bool <strong><a href="brightzone-gremlindriver-connection.html#open()-detail">open</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#open()-detail">open</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col">bool</td>
@@ -766,7 +847,7 @@ This closes the current session on the server then closes the socket</strong></p
         
         run()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -777,7 +858,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">void <strong><a href="brightzone-gremlindriver-connection.html#run()-detail">run</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$msg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$processor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$op&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'eval'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$args&nbsp;</span><span style="color: #007700">=&nbsp;[],&nbsp;</span><span style="color: #0000BB">$expectResponse&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">TRUE&nbsp;</span><span style="color: #007700">)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-connection.html#run()-detail">run</a></strong> ( <span style="color: #0000BB">$msg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span>, <span style="color: #0000BB">$processor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span>, <span style="color: #0000BB">$op&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'eval'</span>, <span style="color: #0000BB">$args&nbsp;</span><span style="color: #007700">=&nbsp;[]</span>, <span style="color: #0000BB">$expectResponse&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">TRUE</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$msg</span></td>
                   <td class="param-type-col">mixed</td>
@@ -818,7 +899,7 @@ This closes the current session on the server then closes the socket</strong></p
         
         send()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -829,7 +910,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.array">array</a> <strong><a href="brightzone-gremlindriver-connection.html#send()-detail">send</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$msg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$processor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$op&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'eval'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$args&nbsp;</span><span style="color: #007700">=&nbsp;[]&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-connection.html#send()-detail">send</a></strong> ( <span style="color: #0000BB">$msg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span>, <span style="color: #0000BB">$processor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span>, <span style="color: #0000BB">$op&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'eval'</span>, <span style="color: #0000BB">$args&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$msg</span></td>
                   <td class="param-type-col">mixed</td>
@@ -870,7 +951,7 @@ This closes the current session on the server then closes the socket</strong></p
         
         socketGetUnpack()
         <span class="detail-header-tag small">
-            protected            method
+            protected                                    method
                     </span>
     </div>
 
@@ -881,7 +962,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><a href="http://www.php.net/language.types.array">array</a> <strong><a href="brightzone-gremlindriver-connection.html#socketGetUnpack()-detail">socketGetUnpack</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-connection.html#socketGetUnpack()-detail">socketGetUnpack</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
@@ -898,7 +979,7 @@ This closes the current session on the server then closes the socket</strong></p
         
         transaction()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -910,7 +991,7 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">mixed <strong><a href="brightzone-gremlindriver-connection.html#transaction()-detail">transaction</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;callable&nbsp;</span><span style="color: #0000BB">$callback</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;[]&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="brightzone-gremlindriver-connection.html#transaction()-detail">transaction</a></strong> ( <span class="signature-type"><a href="http://www.php.net/language.types.callable">callable</a></span> <span style="color: #0000BB">$callback</span>, <span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$callback</span></td>
                   <td class="param-type-col"><a href="http://www.php.net/language.types.callable">callable</a></td>
@@ -939,7 +1020,7 @@ This closes the current session on the server then closes the socket</strong></p
         
         transactionStart()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -952,7 +1033,7 @@ Manual is not the default setting so we will assume a session UUID must exists</
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">bool <strong><a href="brightzone-gremlindriver-connection.html#transactionStart()-detail">transactionStart</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#transactionStart()-detail">transactionStart</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col">bool</td>
@@ -969,7 +1050,7 @@ Manual is not the default setting so we will assume a session UUID must exists</
         
         transactionStop()
         <span class="detail-header-tag small">
-            public            method
+            public                                    method
                     </span>
     </div>
 
@@ -980,7 +1061,7 @@ Manual is not the default setting so we will assume a session UUID must exists</
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature">bool <strong><a href="brightzone-gremlindriver-connection.html#transactionStop()-detail">transactionStop</a></strong><span style="color: #0000BB"></span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$success&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">TRUE&nbsp;</span><span style="color: #007700">)</span></td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#transactionStop()-detail">transactionStop</a></strong> ( <span style="color: #0000BB">$success&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">TRUE</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$success</span></td>
                   <td class="param-type-col">bool</td>
@@ -1035,12 +1116,12 @@ Manual is not the default setting so we will assume a session UUID must exists</
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 04 Apr 2016 05:29:46 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Mon, 25 Jul 2016 15:18:12 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {
     var shiftWindow = function () { scrollBy(0, -50) };
-    if (location.hash) shiftWindow();
+    if (location.hash) setTimeout(shiftWindow, 1);
     window.addEventListener("hashchange", shiftWindow);
 var element = document.createElement("script");
 element.src = "./jssearch.index.js";
