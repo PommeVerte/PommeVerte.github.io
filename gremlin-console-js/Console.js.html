@@ -59,20 +59,108 @@
               <div class="label label-success radius ctx-type">class</div><span>&nbsp;</span><span>new Console()</span><span>&nbsp;</span><span>&nbsp;</span><span class="label label-default">extends</span><span>&nbsp;</span><span>EventEmitter</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"><p>Handles logic related to the console</p></div>
           <pre><code class="language-javascript">class Console extends EventEmitter {</code></pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"></div>
           <pre><code class="language-javascript">options;</code></pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"></div>
           <pre><code class="language-javascript">windowElement;</code></pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"></div>
           <pre><code class="language-javascript">inputElement;</code></pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"></div>
           <pre><code class="language-javascript">client;</code></pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"></div>
           <pre><code class="language-javascript">parser;</code></pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"></div>
           <pre><code class="language-javascript">history = [];</code></pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"></div>
           <pre><code class="language-javascript">historyPointer = 0;</code></pre>
           <section id="constructor">
@@ -149,6 +237,22 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>initClient()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>Opens a connection with the client<br />This is seperated and only called on query so that the user can interact and change settings/plugins<br />after initializing the Console and still affect the client with those changes.</p><p>This also has the potential to reconnect a disconnected client.</p></div>
           <pre><code class="language-javascript">initClient() {
     if(!this.client) {
@@ -311,6 +415,22 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>_attachHandlers()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td>Void</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>Private : attaches keypress/down events to the input</p></div>
           <pre><code class="language-javascript">_attachHandlers() {
     const widget = this;

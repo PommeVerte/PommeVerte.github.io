@@ -57,10 +57,43 @@
               <div class="label label-success radius ctx-type">class</div><span>&nbsp;</span><span>new Parser()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"><p>Handles logic related to results sent back to the console<br />These can be custom crafted to suit different server outputs.<br />Either because of a custom serializer or if a call is made to a server side script.<br />It also allows for a change in the way the elements are displayed in html and how the history entries are generated</p></div>
           <pre><code class="language-javascript">class Parser {</code></pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"></div>
           <pre><code class="language-javascript">_rawResults;</code></pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
           <div class="description"></div>
           <pre><code class="language-javascript">_rawError;</code></pre>
           <section id="constructor">
@@ -145,6 +178,22 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getRawResults()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td>Mixed</td>
+                <td><p>raw server results</p></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>Get the raw result data</p></div>
           <pre><code class="language-javascript">getRawResults() {
     return this._rawResults;
@@ -156,6 +205,22 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getRawError()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td>Mixed</td>
+                <td><p>raw error</p></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>Get the raw error info</p></div>
           <pre><code class="language-javascript">getRawError() {
     return this._rawError;
@@ -167,6 +232,22 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getResults()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td>Mixed</td>
+                <td><p>raw server results</p></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>Get generic results.<br />These results are constructed in a way the console can comprehend them.<br />Extend this if you&#39;re receiving non conventional data from the server</p></div>
           <pre><code class="language-javascript">getResults() {
     return this.getRawResults();
@@ -178,6 +259,22 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getError()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td>Mixed</td>
+                <td><p>raw error</p></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>Get the raw error info<br />These results are constructed in a way the console can comprehend them.<br />Extend this if you&#39;re receiving non conventional data from the server</p></div>
           <pre><code class="language-javascript">getError() {
     return this.getRawError();
@@ -189,6 +286,22 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getHtmlResults()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td>String, DOM</td>
+                <td><p>the element you want to append to the console window</p></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>get the HTML results to put into the window dom element<br />Extend this for custom behavior</p></div>
           <pre><code class="language-javascript">getHtmlResults() {
     var jsonResultSet = '';
@@ -204,6 +317,22 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getHtmlError()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td>String, DOM</td>
+                <td><p>the element you want to append to the console window</p></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>get the HTML error to put into the window dom element<br />Extend this for custom behavior</p></div>
           <pre><code class="language-javascript">getHtmlError() {
     return $('&lt;div&gt;').addClass(&quot;port-error&quot;).html('Could not complete query =&gt; ' + Html.htmlEncode(this.getError().message))
@@ -215,6 +344,22 @@
               <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>getHistory()</span><span>&nbsp;</span>
             </p>
           </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>return</td>
+                <td>Object</td>
+                <td><p>the &quot;line&quot; in a history entry.</p></td>
+              </tr>
+            </tbody>
+          </table>
           <div class="description"><p>Return a line of the history entry for this result.<br />This is usefull if you want to customize the history entry. However remember that:<br />{error:&quot;na&quot;, query:&quot;&quot;} are required</p></div>
           <pre><code class="language-javascript">getHistory() {
     return {results: this.getRawResults(), error: this.getError()};
