@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/537d6540/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/d6932ad6/solarized_light.css" rel="stylesheet">
+<link href="./assets/b1cab6ac/style.css" rel="stylesheet">
+<script src="./assets/67fec1ae/jquery.js"></script>
+<script src="./assets/537d6540/js/bootstrap.js"></script>
+<script src="./assets/6ec26592/jssearch.js"></script>    <title>Gson3, Brightzone\GremlinDriver\Serializers\Gson3 - Yii Framework 2.0 API Documentation</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w14" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w14-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w14-collapse" class="collapse navbar-collapse"><ul id="w15" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-3">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-12" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver <b class="caret"></b></a><div id="navigation-12" class="submenu panel-collapse collapse"><a class="list-group-item" href="./brightzone-gremlindriver-connection.html">Connection</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-helper.html">Helper</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-internalexception.html">InternalException</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-message.html">Message</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-requestmessage.html">RequestMessage</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-serverexception.html">ServerException</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-workload.html">Workload</a></div>
+<a class="list-group-item active" href="#navigation-13" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver\Serializers <b class="caret"></b></a><div id="navigation-13" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./brightzone-gremlindriver-serializers-gson3.html">Gson3</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-serializers-json.html">Json</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-serializers-serializerinterface.html">SerializerInterface</a></div></div>    </div>
+    <div class="col-md-9 api-content" role="main">
+        <h1>Class Brightzone\GremlinDriver\Serializers\Gson3</h1>
+<div class="top-nav">
+    <a href="index.html">All Classes</a>
+            | <a href="#properties">Properties</a>
+                | <a href="#methods">Methods</a>
+            </div>
+
+<table class="summaryTable docClass table table-bordered">
+    <colgroup>
+        <col class="col-name" />
+        <col class="col-value" />
+    </colgroup>
+            <tr><th>Inheritance</th><td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td></tr>
+                <tr><th>Implements</th><td><a href="brightzone-gremlindriver-serializers-serializerinterface.html">Brightzone\GremlinDriver\Serializers\SerializerInterface</a></td></tr>
+                                    </table>
+
+<div class="class-description">
+    <p><strong>Gremlin-server PHP JSON Serializer class
+Builds and parses message body for Messages class</strong></p>
+    
+    </div>
+
+<a id="properties"></a>
+
+<div class="summary doc-property">
+<h2>Public Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="$mimeType">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#$mimeType-detail">$mimeType</a></td>
+        <td><a href="http://www.php.net/language.types.integer">integer</a></td>
+        <td>Value of this serializer.</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="$name">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#$name-detail">$name</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The name of the serializer</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            </table>
+</div>
+
+<div class="summary doc-property">
+<h2>Protected Properties</h2>
+
+<p><a href="#" class="toggle">Hide inherited properties</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-property" />
+    <col class="col-type" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
+</tr>
+                <tr id="$supportedFromTypes">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#$supportedFromTypes-detail">$supportedFromTypes</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The native supported types that the serializer can convert to graphson</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="$supportedGSTypes">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#$supportedGSTypes-detail">$supportedGSTypes</a></td>
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>The GraphSON supported types that the serializer can deconvert from</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="methods"></a>
+
+<div class="summary doc-method">
+<h2>Public Methods</h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summary-table table table-striped table-bordered table-hover">
+<colgroup>
+    <col class="col-method" />
+    <col class="col-description" />
+    <col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+        <tr id="convert()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convert()-detail">convert()</a></td>
+        <td>Transforms a variable into it's graphson 3.0 counterpart structure</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="convertArray()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convertArray()-detail">convertArray()</a></td>
+        <td>Convert an array into it's corresponding graphson 3.0 form(List or Map)
+This differentiates between Maps and Lists (we do not convert to Set)</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="convertBoolean()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convertBoolean()-detail">convertBoolean()</a></td>
+        <td>Convert a boolean into it's graphson 3.0 form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="convertDouble()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convertDouble()-detail">convertDouble()</a></td>
+        <td>Convert an float/double into it's graphson 3.0 form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="convertInteger()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convertInteger()-detail">convertInteger()</a></td>
+        <td>Convert an integer into it's graphson 3.0 form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="convertList()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convertList()-detail">convertList()</a></td>
+        <td>Convert an array into a graphson 3.0 List</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="convertMap()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convertMap()-detail">convertMap()</a></td>
+        <td>Convert an array into a graphson 3.0 Map</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="convertNULL()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convertNULL()-detail">convertNULL()</a></td>
+        <td>Convert a NULL into it's graphson 3.0 form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="convertObject()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convertObject()-detail">convertObject()</a></td>
+        <td>Convert an object into a graphson 3.0 Map
+Currently unsuported</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="convertString()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#convertString()-detail">convertString()</a></td>
+        <td>Convert a string into it's graphson 3.0 form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvert()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvert()-detail">deconvert()</a></td>
+        <td>Transforms a graphson 3.0 "variable" into it's native structure</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertClass()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertClass()-detail">deconvertClass()</a></td>
+        <td>Deconvert a Class into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertDate()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertDate()-detail">deconvertDate()</a></td>
+        <td>Deconvert a Date into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertDouble()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertDouble()-detail">deconvertDouble()</a></td>
+        <td>Deconvert a Double into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertEdge()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertEdge()-detail">deconvertEdge()</a></td>
+        <td>Deconvert a Edge into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertFloat()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertFloat()-detail">deconvertFloat()</a></td>
+        <td>Deconvert a Float into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertInt32()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertInt32()-detail">deconvertInt32()</a></td>
+        <td>Deconvert an Int32 into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertInt64()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertInt64()-detail">deconvertInt64()</a></td>
+        <td>Deconvert an Int64 into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertList()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertList()-detail">deconvertList()</a></td>
+        <td>Deconvert a List into it's native form (Array)</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertMap()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertMap()-detail">deconvertMap()</a></td>
+        <td>Deconvert a Map into it's native form (Array)</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertPath()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertPath()-detail">deconvertPath()</a></td>
+        <td>Deconvert a Path into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertProperty()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertProperty()-detail">deconvertProperty()</a></td>
+        <td>Deconvert a Property into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertSet()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertSet()-detail">deconvertSet()</a></td>
+        <td>Deconvert a Set into it's native form (Array)</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertTimestamp()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertTimestamp()-detail">deconvertTimestamp()</a></td>
+        <td>Deconvert a Timestamp into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertTinkergraph()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertTinkergraph()-detail">deconvertTinkergraph()</a></td>
+        <td>Deconvert a TinkerGraph into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertTree()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertTree()-detail">deconvertTree()</a></td>
+        <td>Deconvert a Tree into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertUUID()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertUUID()-detail">deconvertUUID()</a></td>
+        <td>Deconvert a UUID into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertVertex()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertVertex()-detail">deconvertVertex()</a></td>
+        <td>Deconvert a Vertex into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="deconvertVertexProperty()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertVertexProperty()-detail">deconvertVertexProperty()</a></td>
+        <td>Deconvert a VertexProperty into it's native form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="getMimeType()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#getMimeType()-detail">getMimeType()</a></td>
+        <td>Get this serializer's value
+This will be deprecated with TP3 Gremlin-server</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="getName()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#getName()-detail">getName()</a></td>
+        <td>Get this serializer's Name</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="serialize()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#serialize()-detail">serialize()</a></td>
+        <td>Serializes the data</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+            <tr id="unserialize()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#unserialize()-detail">unserialize()</a></td>
+        <td>Unserializes the data</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
+    </table>
+</div>
+
+<a id="events"></a>
+
+<a id="constants"></a>
+
+<h2>Property Details</h2>
+
+<div class="property-doc">
+
+    <div class="detail-header h3" id="$mimeType-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#$mimeType-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $mimeType        <span class="detail-header-tag small">
+            public            static                                    property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Value of this serializer. Will be deprecated in TP3</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <a href="brightzone-gremlindriver-serializers-gson3.html#$mimeType-detail">$mimeType</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'application/json'</span></div>
+
+
+    <div class="detail-header h3" id="$name-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#$name-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $name        <span class="detail-header-tag small">
+            public            static                                    property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The name of the serializer</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-gremlindriver-serializers-gson3.html#$name-detail">$name</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'GRAPHSON3'</span></div>
+
+
+    <div class="detail-header h3" id="$supportedFromTypes-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#$supportedFromTypes-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $supportedFromTypes        <span class="detail-header-tag small">
+            protected            static                                    property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The native supported types that the serializer can convert to graphson</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">protected static</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-serializers-gson3.html#$supportedFromTypes-detail">$supportedFromTypes</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">"string"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"boolean"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"double"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"integer"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"array"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"object"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"NULL"</span><span style="color: #007700">]</span></div>
+
+
+    <div class="detail-header h3" id="$supportedGSTypes-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#$supportedGSTypes-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $supportedGSTypes        <span class="detail-header-tag small">
+            protected            static                                    property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The GraphSON supported types that the serializer can deconvert from</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">protected static</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-serializers-gson3.html#$supportedGSTypes-detail">$supportedGSTypes</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">"g:Int32"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Int64"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Date"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Timestamp"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:UUID"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Float"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Double"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:List"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Map"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Set"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Class"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Path"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Tree"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Vertex"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:VertexProperty"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"tinker:graph"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Edge"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Property"</span><span style="color: #007700">]</span></div>
+
+</div>
+<h2>Method Details</h2>
+
+<div class="method-doc">
+
+    <div class="detail-header h3" id="convert()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convert()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convert()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Transforms a variable into it's graphson 3.0 counterpart structure</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convert()-detail">convert</a></strong> ( <span style="color: #0000BB">$item</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$item</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>The variable to convert to the graphson 3 structure</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a>|<a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The same element in it's new form.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="convertArray()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convertArray()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convertArray()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Convert an array into it's corresponding graphson 3.0 form(List or Map)
+This differentiates between Maps and Lists (we do not convert to Set)</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convertArray()-detail">convertArray</a></strong> ( <span style="color: #0000BB">$array</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$array</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The array to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Converted array</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="convertBoolean()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convertBoolean()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convertBoolean()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Convert a boolean into it's graphson 3.0 form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convertBoolean()-detail">convertBoolean</a></strong> ( <span style="color: #0000BB">$bool</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$bool</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>The boolean to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>Converted boolean (same as original)</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="convertDouble()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convertDouble()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convertDouble()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Convert an float/double into it's graphson 3.0 form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convertDouble()-detail">convertDouble</a></strong> ( <span style="color: #0000BB">$double</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$double</span></td>
+                  <td class="param-type-col">double</td>
+                  <td class="param-desc-col"><p>The float/double to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Converted double</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="convertInteger()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convertInteger()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convertInteger()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Convert an integer into it's graphson 3.0 form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convertInteger()-detail">convertInteger</a></strong> ( <span style="color: #0000BB">$int</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$int</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The integer to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Converted integer</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="convertList()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convertList()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convertList()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Convert an array into a graphson 3.0 List</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convertList()-detail">convertList</a></strong> ( <span style="color: #0000BB">$array</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$array</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The array to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Converted to GS3 List</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="convertMap()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convertMap()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convertMap()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Convert an array into a graphson 3.0 Map</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convertMap()-detail">convertMap</a></strong> ( <span style="color: #0000BB">$array</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$array</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The array to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Converted to GS3 Map</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="convertNULL()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convertNULL()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convertNULL()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Convert a NULL into it's graphson 3.0 form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.null">null</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convertNULL()-detail">convertNULL</a></strong> ( <span style="color: #0000BB">$null</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$null</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.null">null</a></td>
+                  <td class="param-desc-col"><p>The NULL to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.null">null</a></td>
+                  <td class="param-desc-col"><p>Converted NULL</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="convertObject()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convertObject()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convertObject()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Convert an object into a graphson 3.0 Map
+Currently unsuported</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convertObject()-detail">convertObject</a></strong> ( <span style="color: #0000BB">$object</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$object</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.object">object</a></td>
+                  <td class="param-desc-col"><p>The array to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The converted object</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="convertString()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#convertString()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        convertString()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Convert a string into it's graphson 3.0 form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#convertString()-detail">convertString</a></strong> ( <span style="color: #0000BB">$string</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$string</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The string to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Converted string (same as original currently)</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvert()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvert()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvert()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Transforms a graphson 3.0 "variable" into it's native structure</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvert()-detail">deconvert</a></strong> ( <span style="color: #0000BB">$item</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$item</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>The variable to convert to php native</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>The same element in it's new form.</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertClass()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertClass()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertClass()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Class into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertClass()-detail">deconvertClass</a></strong> ( <span style="color: #0000BB">$classname</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$classname</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The class to convert</p>
+</td>
+                </tr>
+                                                    <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertDate()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertDate()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertDate()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Date into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertDate()-detail">deconvertDate</a></strong> ( <span style="color: #0000BB">$date</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$date</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The date to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Deconverted Date</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertDouble()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertDouble()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertDouble()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Double into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">double</span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertDouble()-detail">deconvertDouble</a></strong> ( <span style="color: #0000BB">$double</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$double</span></td>
+                  <td class="param-type-col">double</td>
+                  <td class="param-desc-col"><p>The double to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">double</td>
+                  <td class="param-desc-col"><p>Deconverted Double</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertEdge()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertEdge()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertEdge()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Edge into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertEdge()-detail">deconvertEdge</a></strong> ( <span style="color: #0000BB">$edge</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$edge</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Edge to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Deconverted Edge</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertFloat()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertFloat()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertFloat()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Float into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">double</span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertFloat()-detail">deconvertFloat</a></strong> ( <span style="color: #0000BB">$float</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$float</span></td>
+                  <td class="param-type-col">double</td>
+                  <td class="param-desc-col"><p>The float to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">double</td>
+                  <td class="param-desc-col"><p>Deconverted Float</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertInt32()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertInt32()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertInt32()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert an Int32 into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertInt32()-detail">deconvertInt32</a></strong> ( <span style="color: #0000BB">$int</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$int</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The int to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Deconverted Int32</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertInt64()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertInt64()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertInt64()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert an Int64 into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertInt64()-detail">deconvertInt64</a></strong> ( <span style="color: #0000BB">$int</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$int</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The int to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Deconverted Int64</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertList()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertList()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertList()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a List into it's native form (Array)</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertList()-detail">deconvertList</a></strong> ( <span style="color: #0000BB">$list</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$list</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The List to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Deconverted List</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertMap()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertMap()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertMap()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Map into it's native form (Array)</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertMap()-detail">deconvertMap</a></strong> ( <span style="color: #0000BB">$map</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$map</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Map to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Deconverted Map</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertPath()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertPath()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertPath()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Path into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertPath()-detail">deconvertPath</a></strong> ( <span style="color: #0000BB">$path</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$path</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Path to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Deconverted Path</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertProperty()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertProperty()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertProperty()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Property into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertProperty()-detail">deconvertProperty</a></strong> ( <span style="color: #0000BB">$prop</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$prop</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Property to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>Deconverted Property</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertSet()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertSet()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertSet()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Set into it's native form (Array)</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertSet()-detail">deconvertSet</a></strong> ( <span style="color: #0000BB">$set</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$set</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Set to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Deconverted Set</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertTimestamp()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertTimestamp()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertTimestamp()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Timestamp into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertTimestamp()-detail">deconvertTimestamp</a></strong> ( <span style="color: #0000BB">$timestamp</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$timestamp</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>The Timestamp to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Deconverted Timestamp</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertTinkergraph()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertTinkergraph()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertTinkergraph()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a TinkerGraph into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertTinkergraph()-detail">deconvertTinkergraph</a></strong> ( <span style="color: #0000BB">$tinkergraph</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$tinkergraph</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The TinkerGraph to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Deconverted TinkerGraph</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertTree()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertTree()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertTree()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Tree into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertTree()-detail">deconvertTree</a></strong> ( <span style="color: #0000BB">$tree</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$tree</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Tree to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Deconverted Tree</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertUUID()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertUUID()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertUUID()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a UUID into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertUUID()-detail">deconvertUUID</a></strong> ( <span style="color: #0000BB">$uuid</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$uuid</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The UUID to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Deconverted UUID</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertVertex()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertVertex()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertVertex()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Vertex into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertVertex()-detail">deconvertVertex</a></strong> ( <span style="color: #0000BB">$vertex</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$vertex</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The Vertex to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Deconverted Vertex</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertVertexProperty()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertVertexProperty()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertVertexProperty()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a VertexProperty into it's native form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertVertexProperty()-detail">deconvertVertexProperty</a></strong> ( <span style="color: #0000BB">$vertexProp</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$vertexProp</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The VertexProperty to convert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>Deconverted VertexProperty</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getMimeType()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#getMimeType()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        getMimeType()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Get this serializer's value
+This will be deprecated with TP3 Gremlin-server</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#getMimeType()-detail">getMimeType</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Name of serializer</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="getName()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#getName()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        getName()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Get this serializer's Name</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#getName()-detail">getName</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Name of serializer</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="serialize()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#serialize()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        serialize()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Serializes the data</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#serialize()-detail">serialize</a></strong> ( <b>&</b><span style="color: #0000BB">$data</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$data</span></td>
+                  <td class="param-type-col"></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Length of generated string</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="unserialize()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#unserialize()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        unserialize()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Unserializes the data</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#unserialize()-detail">unserialize</a></strong> ( <span style="color: #0000BB">$data</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$data</span></td>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>Data to be unserialized</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Unserialized message</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+</div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $("a.toggle").on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('properties-hidden')) {
+            $this.text($this.text().replace(/Show/,'Hide'));
+            $this.parents(".summary").find(".inherited").show();
+            $this.removeClass('properties-hidden');
+        } else {
+            $this.text($this.text().replace(/Hide/,'Show'));
+            $this.parents(".summary").find(".inherited").hide();
+            $this.addClass('properties-hidden');
+        }
+
+        return false;
+    });
+    /*
+     $(".sourceCode a.show").toggle(function () {
+     $(this).text($(this).text().replace(/show/,'hide'));
+     $(this).parents(".sourceCode").find("div.code").show();
+     },function () {
+     $(this).text($(this).text().replace(/hide/,'show'));
+     $(this).parents(".sourceCode").find("div.code").hide();
+     });
+     $("a.sourceLink").click(function () {
+     $(this).attr('target','_blank');
+     });
+     */
+    /*]]>*/
+</script>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Thu, 19 Apr 2018 18:51:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script>jQuery(function ($) {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>
