@@ -2,15 +2,22 @@ Array
 (
     [0] => Array
         (
-            [line] => 33
-            [file] => /home/travis/build/PommeVerte/gremlin-php/src/Serializers/Json.php
+            [line] => 73
+            [file] => src/Serializers/Gson3.php
             [message] => Undefined parameter documented:  in serialize().
         )
 
     [1] => Array
         (
+            [line] => 33
+            [file] => src/Serializers/Json.php
+            [message] => Undefined parameter documented:  in serialize().
+        )
+
+    [2] => Array
+        (
             [line] => 23
-            [file] => /home/travis/build/PommeVerte/gremlin-php/src/Serializers/SerializerInterface.php
+            [file] => src/Serializers/SerializerInterface.php
             [message] => Undefined parameter documented:  in serialize().
         )
 

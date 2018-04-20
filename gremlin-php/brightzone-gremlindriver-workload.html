@@ -4,20 +4,20 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="en" />
-        <link href="./assets/83431c42/css/bootstrap.css" rel="stylesheet">
-<link href="./assets/dad35df9/solarized_light.css" rel="stylesheet">
-<link href="./assets/a7428edc/style.css" rel="stylesheet">
-<script src="./assets/616a4310/jquery.js"></script>
-<script src="./assets/83431c42/js/bootstrap.js"></script>
-<script src="./assets/4f23dc58/jssearch.js"></script>    <title>Workload, Brightzone\GremlinDriver\Workload - Yii Framework 2.0 API Documentation</title>
+        <link href="./assets/537d6540/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/d6932ad6/solarized_light.css" rel="stylesheet">
+<link href="./assets/b1cab6ac/style.css" rel="stylesheet">
+<script src="./assets/67fec1ae/jquery.js"></script>
+<script src="./assets/537d6540/js/bootstrap.js"></script>
+<script src="./assets/6ec26592/jssearch.js"></script>    <title>Workload, Brightzone\GremlinDriver\Workload - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
 <div class="wrap">
-    <nav id="w26" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w26-collapse"><span class="sr-only">Toggle navigation</span>
+    <nav id="w34" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w34-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w26-collapse" class="collapse navbar-collapse"><ul id="w27" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w34-collapse" class="collapse navbar-collapse"><ul id="w35" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
   </div>
@@ -31,13 +31,15 @@
     
 <div class="row">
     <div class="col-md-3">
-                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-24" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver <b class="caret"></b></a><div id="navigation-24" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./brightzone-gremlindriver-connection.html">Connection</a>
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-32" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver <b class="caret"></b></a><div id="navigation-32" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./brightzone-gremlindriver-connection.html">Connection</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-helper.html">Helper</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-internalexception.html">InternalException</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-message.html">Message</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-requestmessage.html">RequestMessage</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-serverexception.html">ServerException</a>
 <a class="list-group-item active" href="./brightzone-gremlindriver-workload.html">Workload</a></div>
-<a class="list-group-item" href="#navigation-25" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver\Serializers <b class="caret"></b></a><div id="navigation-25" class="submenu panel-collapse collapse"><a class="list-group-item" href="./brightzone-gremlindriver-serializers-json.html">Json</a>
+<a class="list-group-item" href="#navigation-33" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver\Serializers <b class="caret"></b></a><div id="navigation-33" class="submenu panel-collapse collapse"><a class="list-group-item" href="./brightzone-gremlindriver-serializers-gson3.html">Gson3</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-serializers-json.html">Json</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-serializers-serializerinterface.html">SerializerInterface</a></div></div>    </div>
     <div class="col-md-9 api-content" role="main">
         <h1>Class Brightzone\GremlinDriver\Workload</h1>
@@ -89,8 +91,8 @@ It also allows for fail-retry strategies in the event of concurrency errors</p>
 </tr>
         <tr id="$callback">
         <td><a href="brightzone-gremlindriver-workload.html#$callback-detail">$callback</a></td>
-        <td>\Brightzone\GremlinDriver\the</td>
-        <td>Callback code to be executed
+        <td><a href="http://www.php.net/language.types.callable">callable</a></td>
+        <td>The callback code to be executed
 Bellow is a common example:
 ~~~
 function(&amp;db, $msg, $processor, $op, $processor, $args){}
@@ -100,8 +102,8 @@ It must return something other than void.</td>
     </tr>
             <tr id="$params">
         <td><a href="brightzone-gremlindriver-workload.html#$params-detail">$params</a></td>
-        <td>\Brightzone\GremlinDriver\paramteres</td>
-        <td>Required for the workload
+        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td>Paramteres required for the workload
 
 Ideas of params would be :
 - Connection &amp;db        connection object to operate on
@@ -160,8 +162,9 @@ Ideas of params would be :
                     </span>
     </div>
 
+    
     <div class="doc-description">
-        <p>Callback code to be executed
+        <p>The callback code to be executed
 Bellow is a common example:
 ~~~
 function(&amp;db, $msg, $processor, $op, $processor, $args){}
@@ -170,7 +173,7 @@ It must return something other than void. (the desired result)</p>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type">\Brightzone\GremlinDriver\the</span> <a href="brightzone-gremlindriver-workload.html#$callback-detail">$callback</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.callable">callable</a></span> <a href="brightzone-gremlindriver-workload.html#$callback-detail">$callback</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
 
 
     <div class="detail-header h3" id="$params-detail">
@@ -182,8 +185,9 @@ It must return something other than void. (the desired result)</p>
                     </span>
     </div>
 
+    
     <div class="doc-description">
-        <p>Required for the workload</p>
+        <p>Paramteres required for the workload</p>
 <p>Ideas of params would be :</p>
 <ul>
 <li>Connection &amp;db        connection object to operate on</li>
@@ -195,7 +199,7 @@ It must return something other than void. (the desired result)</p>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type">\Brightzone\GremlinDriver\paramteres</span> <a href="brightzone-gremlindriver-workload.html#$params-detail">$params</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-workload.html#$params-detail">$params</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
 
 </div>
 <h2>Method Details</h2>
@@ -212,6 +216,7 @@ It must return something other than void. (the desired result)</p>
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Override Constructor</strong></p>
 
@@ -246,6 +251,7 @@ It must return something other than void. (the desired result)</p>
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Linear retry strategy.</strong></p>
 
@@ -253,20 +259,25 @@ It must return something other than void. (the desired result)</p>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">\Brightzone\GremlinDriver\the</span> <strong><a href="brightzone-gremlindriver-workload.html#linearRetry()-detail">linearRetry</a></strong> ( <span style="color: #0000BB">$attempts</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="brightzone-gremlindriver-workload.html#linearRetry()-detail">linearRetry</a></strong> ( <span style="color: #0000BB">$attempts</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$attempts</span></td>
-                  <td class="param-type-col">int</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
                   <td class="param-desc-col"><p>The number of times to retry</p>
 </td>
                 </tr>
                                         <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col">\Brightzone\GremlinDriver\the</td>
-                  <td class="param-desc-col"><p>Result of the executable code</p>
+                  <td class="param-type-col">mixed</td>
+                  <td class="param-desc-col"><p>The result of the executable code</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-serverexception.html">Brightzone\GremlinDriver\ServerException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 </div>
@@ -308,10 +319,10 @@ It must return something other than void. (the desired result)</p>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Wed, 12 Oct 2016 19:48:53 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Thu, 19 Apr 2018 18:51:19 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
-<script type="text/javascript">jQuery(document).ready(function () {
+<script>jQuery(function ($) {
     var shiftWindow = function () { scrollBy(0, -50) };
     if (location.hash) setTimeout(shiftWindow, 1);
     window.addEventListener("hashchange", shiftWindow);

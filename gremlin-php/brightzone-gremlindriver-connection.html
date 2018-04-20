@@ -4,20 +4,20 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="en" />
-        <link href="./assets/83431c42/css/bootstrap.css" rel="stylesheet">
-<link href="./assets/dad35df9/solarized_light.css" rel="stylesheet">
-<link href="./assets/a7428edc/style.css" rel="stylesheet">
-<script src="./assets/616a4310/jquery.js"></script>
-<script src="./assets/83431c42/js/bootstrap.js"></script>
-<script src="./assets/4f23dc58/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
+        <link href="./assets/537d6540/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/d6932ad6/solarized_light.css" rel="stylesheet">
+<link href="./assets/b1cab6ac/style.css" rel="stylesheet">
+<script src="./assets/67fec1ae/jquery.js"></script>
+<script src="./assets/537d6540/js/bootstrap.js"></script>
+<script src="./assets/6ec26592/jssearch.js"></script>    <title>Connection, Brightzone\GremlinDriver\Connection - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
 <div class="wrap">
-    <nav id="w6" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w6-collapse"><span class="sr-only">Toggle navigation</span>
+    <nav id="w10" class="navbar-inverse navbar-fixed-top navbar"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w10-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w6-collapse" class="collapse navbar-collapse"><ul id="w7" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Yii Framework 2.0 API Documentation</a></div><div id="w10-collapse" class="collapse navbar-collapse"><ul id="w11" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
   </div>
@@ -31,13 +31,15 @@
     
 <div class="row">
     <div class="col-md-3">
-                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-4" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver <b class="caret"></b></a><div id="navigation-4" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./brightzone-gremlindriver-connection.html">Connection</a>
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-8" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver <b class="caret"></b></a><div id="navigation-8" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./brightzone-gremlindriver-connection.html">Connection</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-helper.html">Helper</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-internalexception.html">InternalException</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-message.html">Message</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-requestmessage.html">RequestMessage</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-serverexception.html">ServerException</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-workload.html">Workload</a></div>
-<a class="list-group-item" href="#navigation-5" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver\Serializers <b class="caret"></b></a><div id="navigation-5" class="submenu panel-collapse collapse"><a class="list-group-item" href="./brightzone-gremlindriver-serializers-json.html">Json</a>
+<a class="list-group-item" href="#navigation-9" data-toggle="collapse" data-parent="#navigation">Brightzone\GremlinDriver\Serializers <b class="caret"></b></a><div id="navigation-9" class="submenu panel-collapse collapse"><a class="list-group-item" href="./brightzone-gremlindriver-serializers-gson3.html">Gson3</a>
+<a class="list-group-item" href="./brightzone-gremlindriver-serializers-json.html">Json</a>
 <a class="list-group-item" href="./brightzone-gremlindriver-serializers-serializerinterface.html">SerializerInterface</a></div></div>    </div>
     <div class="col-md-9 api-content" role="main">
         <h1>Class Brightzone\GremlinDriver\Connection</h1>
@@ -89,7 +91,7 @@
 <tr>
   <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
 </tr>
-            <tr id="$aliases">
+                    <tr id="$aliases">
         <td><a href="brightzone-gremlindriver-connection.html#$aliases-detail">$aliases</a></td>
         <td><a href="http://www.php.net/language.types.array">array</a></td>
         <td>Aliases to be used for this connection.</td>
@@ -97,9 +99,10 @@
     </tr>
             <tr id="$emptySet">
         <td><a href="brightzone-gremlindriver-connection.html#$emptySet-detail">$emptySet</a></td>
-        <td>bool</td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
         <td>Whether or not the driver should return empty result sets as an empty array
-(the default behavior is to propagate the exception from the server - yes the server throws exceptions on empty result sets.</td>
+(the default behavior is to propagate the exception from the server - yes the server throws exceptions on empty
+result sets.</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
             <tr id="$graph">
@@ -136,14 +139,14 @@ Default : 8182</td>
     </tr>
             <tr id="$retryAttempts">
         <td><a href="brightzone-gremlindriver-connection.html#$retryAttempts-detail">$retryAttempts</a></td>
-        <td>\Brightzone\GremlinDriver\the</td>
-        <td>Number of attempts before total failure</td>
+        <td><a href="http://www.php.net/language.types.integer">integer</a></td>
+        <td>The number of attempts before total failure</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
             <tr id="$retryStrategy">
         <td><a href="brightzone-gremlindriver-connection.html#$retryStrategy-detail">$retryStrategy</a></td>
-        <td>\Brightzone\GremlinDriver\the</td>
-        <td>Strategy to use for retry</td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The strategy to use for retry</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
             <tr id="$saslMechanism">
@@ -154,7 +157,7 @@ Default : 8182</td>
     </tr>
             <tr id="$ssl">
         <td><a href="brightzone-gremlindriver-connection.html#$ssl-detail">$ssl</a></td>
-        <td>bool|<a href="http://www.php.net/language.types.array">array</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a>|<a href="http://www.php.net/language.types.array">array</a></td>
         <td>Whether or not we're using ssl.</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
@@ -188,7 +191,19 @@ Default : 8182</td>
 <tr>
   <th>Property</th><th>Type</th><th>Description</th><th>Defined By</th>
 </tr>
-        <tr id="$_socket">
+        <tr id="$_inTransaction">
+        <td><a href="brightzone-gremlindriver-connection.html#$_inTransaction-detail">$_inTransaction</a></td>
+        <td><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+        <td>Tells us if we're inside a transaction</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
+            <tr id="$_sessionUuid">
+        <td><a href="brightzone-gremlindriver-connection.html#$_sessionUuid-detail">$_sessionUuid</a></td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>The session ID for this connection.</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
+            <tr id="$_socket">
         <td><a href="brightzone-gremlindriver-connection.html#$_socket-detail">$_socket</a></td>
         <td><a href="http://www.php.net/language.types.resource">resource</a></td>
         <td>Rexpro socket connection</td>
@@ -251,6 +266,11 @@ You can use this to close open sessions on the server end. This allows to free u
         <td>Checks if the socket is currently open</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
+            <tr id="isSessionOpen()">
+        <td><a href="brightzone-gremlindriver-connection.html#isSessionOpen()-detail">isSessionOpen()</a></td>
+        <td>Checks if the session is currently open</td>
+        <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
+    </tr>
                 <tr id="open()">
         <td><a href="brightzone-gremlindriver-connection.html#open()-detail">open()</a></td>
         <td>Connects to socket and starts a session with gremlin-server</td>
@@ -300,10 +320,11 @@ You can use this to close open sessions on the server end. This allows to free u
 </tr>
                 <tr id="authenticate()">
         <td><a href="brightzone-gremlindriver-connection.html#authenticate()-detail">authenticate()</a></td>
-        <td>Builds an authentication message when challenged by the server</td>
+        <td>Builds an authentication message when challenged by the server
+Once you respond and authenticate you will receive the response for the request you made prior to the challenge</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
     </tr>
-                                <tr id="makeHandshake()">
+                                    <tr id="makeHandshake()">
         <td><a href="brightzone-gremlindriver-connection.html#makeHandshake()-detail">makeHandshake()</a></td>
         <td>Make Original handshake with the server</td>
         <td><a href="brightzone-gremlindriver-connection.html">Brightzone\GremlinDriver\Connection</a></td>
@@ -324,6 +345,43 @@ You can use this to close open sessions on the server end. This allows to free u
 
 <div class="property-doc">
 
+    <div class="detail-header h3" id="$_inTransaction-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$_inTransaction-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $_inTransaction        <span class="detail-header-tag small">
+            protected                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>Tells us if we're inside a transaction</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <a href="brightzone-gremlindriver-connection.html#$_inTransaction-detail">$_inTransaction</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
+
+
+    <div class="detail-header h3" id="$_sessionUuid-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$_sessionUuid-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        $_sessionUuid        <span class="detail-header-tag small">
+            protected                                                property
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p>The session ID for this connection.
+Session ID allows us to access variable bindings made in previous requests. It is binary data</p>
+
+            </div>
+
+    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-gremlindriver-connection.html#$_sessionUuid-detail">$_sessionUuid</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+
+
     <div class="detail-header h3" id="$_socket-detail">
         <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
         <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#$_socket-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
@@ -333,6 +391,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>Rexpro socket connection</p>
 
@@ -350,6 +409,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>Aliases to be used for this connection.
 Allows users to set up whichever character on the db end such as "g" and reference it with another alias.</p>
@@ -368,13 +428,15 @@ Allows users to set up whichever character on the db end such as "g" and referen
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>Whether or not the driver should return empty result sets as an empty array
-(the default behavior is to propagate the exception from the server - yes the server throws exceptions on empty result sets.)</p>
+(the default behavior is to propagate the exception from the server - yes the server throws exceptions on empty
+result sets.)</p>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <a href="brightzone-gremlindriver-connection.html#$emptySet-detail">$emptySet</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <a href="brightzone-gremlindriver-connection.html#$emptySet-detail">$emptySet</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
 
 
     <div class="detail-header h3" id="$graph-detail">
@@ -386,6 +448,7 @@ Allows users to set up whichever character on the db end such as "g" and referen
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>The graph to use.</p>
 
@@ -403,6 +466,7 @@ Allows users to set up whichever character on the db end such as "g" and referen
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>Contains the host information required to connect to the database.</p>
 <p>Default: localhost</p>
@@ -421,6 +485,7 @@ Allows users to set up whichever character on the db end such as "g" and referen
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>Message object</p>
 
@@ -438,6 +503,7 @@ Allows users to set up whichever character on the db end such as "g" and referen
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>The password for establishing DB connection. Defaults to NULL.</p>
 
@@ -455,6 +521,7 @@ Allows users to set up whichever character on the db end such as "g" and referen
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>Contains port information to connect to the database</p>
 <p>Default : 8182</p>
@@ -473,12 +540,13 @@ Allows users to set up whichever character on the db end such as "g" and referen
                     </span>
     </div>
 
+    
     <div class="doc-description">
-        <p>Number of attempts before total failure</p>
+        <p>The number of attempts before total failure</p>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">\Brightzone\GremlinDriver\the</span> <a href="brightzone-gremlindriver-connection.html#$retryAttempts-detail">$retryAttempts</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span></div>
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.integer">integer</a></span> <a href="brightzone-gremlindriver-connection.html#$retryAttempts-detail">$retryAttempts</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span></div>
 
 
     <div class="detail-header h3" id="$retryStrategy-detail">
@@ -490,12 +558,13 @@ Allows users to set up whichever character on the db end such as "g" and referen
                     </span>
     </div>
 
+    
     <div class="doc-description">
-        <p>Strategy to use for retry</p>
+        <p>The strategy to use for retry</p>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">\Brightzone\GremlinDriver\the</span> <a href="brightzone-gremlindriver-connection.html#$retryStrategy-detail">$retryStrategy</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'linear'</span></div>
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <a href="brightzone-gremlindriver-connection.html#$retryStrategy-detail">$retryStrategy</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'linear'</span></div>
 
 
     <div class="detail-header h3" id="$saslMechanism-detail">
@@ -507,6 +576,7 @@ Allows users to set up whichever character on the db end such as "g" and referen
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>Which sasl mechanism to use for authentication. Can be either PLAIN or GSSAPI.
 This is ignored by gremlin-server by default but some custom server implementations may use this</p>
@@ -525,12 +595,15 @@ This is ignored by gremlin-server by default but some custom server implementati
                     </span>
     </div>
 
+    
     <div class="doc-description">
-        <p>Whether or not we're using ssl. If an array is set it should correspond to a stream_context_create() array.</p>
+        <p>Whether or not we're using ssl. If an array is set it should correspond to a</p>
+<pre><code class="hljs scss"> <span class="hljs-function">stream_context_create</span>() array.
+</code></pre>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool|<a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-connection.html#$ssl-detail">$ssl</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a>|<a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-connection.html#$ssl-detail">$ssl</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span></div>
 
 
     <div class="detail-header h3" id="$timeout-detail">
@@ -542,8 +615,11 @@ This is ignored by gremlin-server by default but some custom server implementati
                     </span>
     </div>
 
+    
     <div class="doc-description">
-        <p>Timeout to use for connection to Rexster. If not set the timeout set in php.ini will be used: ini_get("default_socket_timeout")</p>
+        <p>Timeout to use for connection to Rexster. If not set the timeout set in php.ini will be used:</p>
+<pre><code class="hljs apache"> <span class="hljs-keyword">ini_get</span>(<span class="hljs-string">"default_socket_timeout"</span>)
+</code></pre>
 
             </div>
 
@@ -559,6 +635,7 @@ This is ignored by gremlin-server by default but some custom server implementati
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p>The username for establishing DB connection. Defaults to NULL.</p>
 
@@ -581,6 +658,7 @@ This is ignored by gremlin-server by default but some custom server implementati
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Overloading constructor to instantiate a Message instance and
 provide it with a default serializer.</strong></p>
@@ -592,8 +670,9 @@ provide it with a default serializer.</strong></p>
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-connection.html#__construct()-detail">__construct</a></strong> ( <span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">=&nbsp;[]</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$options</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The class options</p>
+</td>
                 </tr>
                                                 </table>
 
@@ -609,6 +688,7 @@ provide it with a default serializer.</strong></p>
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Make sure the session is closed on destruction of the object</strong></p>
 
@@ -631,15 +711,23 @@ provide it with a default serializer.</strong></p>
                     </span>
     </div>
 
+    
     <div class="doc-description">
-        <p><strong>Builds an authentication message when challenged by the server</strong></p>
+        <p><strong>Builds an authentication message when challenged by the server
+Once you respond and authenticate you will receive the response for the request you made prior to the challenge</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-connection.html#authenticate()-detail">authenticate</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-connection.html#authenticate()-detail">authenticate</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>The server response.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -653,6 +741,7 @@ provide it with a default serializer.</strong></p>
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Close connection to server
 This closes the current session on the server then closes the socket</strong></p>
@@ -661,10 +750,10 @@ This closes the current session on the server then closes the socket</strong></p
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#close()-detail">close</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-connection.html#close()-detail">close</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col">bool</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>TRUE on success</p>
 </td>
                 </tr>
@@ -682,6 +771,7 @@ This closes the current session on the server then closes the socket</strong></p
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Closes an open session if it exists
 You can use this to close open sessions on the server end. This allows to free up threads on the server end.</strong></p>
@@ -705,6 +795,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Retrieve the current session UUID</strong></p>
 
@@ -733,6 +824,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Return whether or not this cnnection object is in transaction mode</strong></p>
 
@@ -740,10 +832,10 @@ You can use this to close open sessions on the server end. This allows to free u
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#inTransaction()-detail">inTransaction</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-connection.html#inTransaction()-detail">inTransaction</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col">bool</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>TRUE if in transaction, FALSE otherwise</p>
 </td>
                 </tr>
@@ -761,6 +853,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Checks if the socket is currently open</strong></p>
 
@@ -768,11 +861,40 @@ You can use this to close open sessions on the server end. This allows to free u
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#isConnected()-detail">isConnected</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-connection.html#isConnected()-detail">isConnected</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col">bool</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>TRUE if it is open FALSE if not</p>
+</td>
+                </tr>
+                                    </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="isSessionOpen()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-connection.html#isSessionOpen()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        isSessionOpen()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Checks if the session is currently open</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-connection.html#isSessionOpen()-detail">isSessionOpen</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>TRUE if it's open is FALSE if not.</p>
 </td>
                 </tr>
                                     </table>
@@ -789,6 +911,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Make Original handshake with the server</strong></p>
 
@@ -796,17 +919,17 @@ You can use this to close open sessions on the server end. This allows to free u
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#makeHandshake()-detail">makeHandshake</a></strong> ( <span style="color: #0000BB">$origin&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-connection.html#makeHandshake()-detail">makeHandshake</a></strong> ( <span style="color: #0000BB">$origin&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FALSE</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$origin</span></td>
-                  <td class="param-type-col">bool</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>Whether or not to provide the origin header. currently unsupported</p>
 </td>
                 </tr>
                                         <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col">bool</td>
-                  <td class="param-desc-col"><p>TRUE on succes FALSE on failure</p>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>TRUE on success FALSE on failure</p>
 </td>
                 </tr>
                                     </table>
@@ -823,6 +946,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Connects to socket and starts a session with gremlin-server</strong></p>
 
@@ -830,10 +954,10 @@ You can use this to close open sessions on the server end. This allows to free u
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#open()-detail">open</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-connection.html#open()-detail">open</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col">bool</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>TRUE on success FALSE on error</p>
 </td>
                 </tr>
@@ -851,6 +975,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Constructs and sends a Message entity or gremlin script to the server without waiting for a response.</strong></p>
 
@@ -885,11 +1010,16 @@ You can use this to close open sessions on the server end. This allows to free u
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$expectResponse</span></td>
-                  <td class="param-type-col">bool</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>Arguments to overwrite.</p>
 </td>
                 </tr>
-                                                </table>
+                                                    <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="http://www.php.net/class.exception">Exception</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -903,6 +1033,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Constructs and sends a Message entity or gremlin script to the server and then waits for response</strong></p>
 
@@ -941,7 +1072,12 @@ You can use this to close open sessions on the server end. This allows to free u
                   <td class="param-desc-col"><p>Reply from server.</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-serverexception.html">Brightzone\GremlinDriver\ServerException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -955,6 +1091,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Recieves binary data over the socket and parses it</strong></p>
 
@@ -983,6 +1120,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Run a callback in a transaction.</strong></p>
 
@@ -1024,6 +1162,7 @@ You can use this to close open sessions on the server end. This allows to free u
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>Start a transaction.</strong></p>
 
@@ -1033,10 +1172,10 @@ Manual is not the default setting so we will assume a session UUID must exists</
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#transactionStart()-detail">transactionStart</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-connection.html#transactionStart()-detail">transactionStart</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col">bool</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>TRUE on success FALSE on failure</p>
 </td>
                 </tr>
@@ -1054,6 +1193,7 @@ Manual is not the default setting so we will assume a session UUID must exists</
                     </span>
     </div>
 
+    
     <div class="doc-description">
         <p><strong>End a transaction</strong></p>
 
@@ -1061,16 +1201,16 @@ Manual is not the default setting so we will assume a session UUID must exists</
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">bool</span> <strong><a href="brightzone-gremlindriver-connection.html#transactionStop()-detail">transactionStop</a></strong> ( <span style="color: #0000BB">$success&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">TRUE</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-connection.html#transactionStop()-detail">transactionStop</a></strong> ( <span style="color: #0000BB">$success&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">TRUE</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$success</span></td>
-                  <td class="param-type-col">bool</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>Should the transaction commit or revert changes</p>
 </td>
                 </tr>
                                         <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col">bool</td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>TRUE on success FALSE on failure.</p>
 </td>
                 </tr>
@@ -1116,10 +1256,10 @@ Manual is not the default setting so we will assume a session UUID must exists</
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Wed, 12 Oct 2016 19:48:53 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Thu, 19 Apr 2018 18:51:19 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
-<script type="text/javascript">jQuery(document).ready(function () {
+<script>jQuery(function ($) {
     var shiftWindow = function () { scrollBy(0, -50) };
     if (location.hash) setTimeout(shiftWindow, 1);
     window.addEventListener("hashchange", shiftWindow);
