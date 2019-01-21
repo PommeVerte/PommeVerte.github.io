@@ -6,10 +6,10 @@
     <meta name="language" content="en" />
         <link href="./assets/c213e6eb/css/bootstrap.css" rel="stylesheet">
 <link href="./assets/28e584d9/solarized_light.css" rel="stylesheet">
-<link href="./assets/a831edd8/style.css" rel="stylesheet">
+<link href="./assets/dbf8a060/style.css" rel="stylesheet">
 <script src="./assets/208765ed/jquery.js"></script>
 <script src="./assets/c213e6eb/js/bootstrap.js"></script>
-<script src="./assets/620feacc/jssearch.js"></script>    <title>Gson3, Brightzone\GremlinDriver\Serializers\Gson3 - Yii Framework 2.0 API Documentation</title>
+<script src="./assets/2f8c9861/jssearch.js"></script>    <title>Gson3, Brightzone\GremlinDriver\Serializers\Gson3 - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
@@ -259,6 +259,11 @@ Currently unsuported</td>
         <td>Deconvert a Set into it's native form (Array)</td>
         <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
     </tr>
+            <tr id="deconvertT()">
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertT()-detail">deconvertT()</a></td>
+        <td>Deconvert a Token (T) into it's string form</td>
+        <td><a href="brightzone-gremlindriver-serializers-gson3.html">Brightzone\GremlinDriver\Serializers\Gson3</a></td>
+    </tr>
             <tr id="deconvertTimestamp()">
         <td><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertTimestamp()-detail">deconvertTimestamp()</a></td>
         <td>Deconvert a Timestamp into it's native form</td>
@@ -390,7 +395,7 @@ This will be deprecated with TP3 Gremlin-server</td>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">protected static</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-serializers-gson3.html#$supportedGSTypes-detail">$supportedGSTypes</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">"g:Int32"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Int64"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Date"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Timestamp"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:UUID"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Float"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Double"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:List"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Map"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Set"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Class"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Path"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Tree"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Vertex"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:VertexProperty"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"tinker:graph"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Edge"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Property"</span><span style="color: #007700">]</span></div>
+    <div class="signature"><span class="signature-defs">protected static</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-serializers-gson3.html#$supportedGSTypes-detail">$supportedGSTypes</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">"g:Int32"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Int64"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Date"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Timestamp"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:UUID"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Float"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Double"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:List"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Map"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Set"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Class"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Path"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Tree"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Vertex"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:VertexProperty"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"tinker:graph"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Edge"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:Property"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"g:T"</span><span style="color: #007700">]</span></div>
 
 </div>
 <h2>Method Details</h2>
@@ -469,7 +474,12 @@ This differentiates between Maps and Lists (we do not convert to Set)</strong></
                   <td class="param-desc-col"><p>Converted array</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -609,7 +619,12 @@ This differentiates between Maps and Lists (we do not convert to Set)</strong></
                   <td class="param-desc-col"><p>Converted to GS3 List</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -644,7 +659,12 @@ This differentiates between Maps and Lists (we do not convert to Set)</strong></
                   <td class="param-desc-col"><p>Converted to GS3 Map</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -934,7 +954,12 @@ Currently unsuported</strong></p>
                   <td class="param-desc-col"><p>Deconverted Edge</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -1079,7 +1104,12 @@ Currently unsuported</strong></p>
                   <td class="param-desc-col"><p>Deconverted List</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -1154,7 +1184,12 @@ Currently unsuported</strong></p>
                   <td class="param-desc-col"><p>Deconverted Path</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -1189,7 +1224,12 @@ Currently unsuported</strong></p>
                   <td class="param-desc-col"><p>Deconverted Property</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -1222,6 +1262,46 @@ Currently unsuported</strong></p>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
                   <td class="param-desc-col"><p>Deconverted Set</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
+
+<!--	-->
+
+    <div class="detail-header h3" id="deconvertT()-detail">
+        <a href="#" class="tool-link" title="go to top"><span class="glyphicon glyphicon-arrow-up"></span></a>
+        <a class="tool-link hash" href="brightzone-gremlindriver-serializers-gson3.html#deconvertT()-detail" title="direct link to this method"><span class="glyphicon icon-hash"></span></a>
+        
+        deconvertT()
+        <span class="detail-header-tag small">
+            public                                    method
+                    </span>
+    </div>
+
+    
+    <div class="doc-description">
+        <p><strong>Deconvert a Token (T) into it's string form</strong></p>
+
+        
+            </div>
+
+    <table class="detail-table table table-striped table-bordered table-hover">
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-serializers-gson3.html#deconvertT()-detail">deconvertT</a></strong> ( <span style="color: #0000BB">$t</span> )</td></tr>
+                                    <tr>
+                  <td class="param-name-col"><span style="color: #0000BB">$t</span></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>The token to deconvert</p>
+</td>
+                </tr>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Either "id" or "label"</p>
 </td>
                 </tr>
                                     </table>
@@ -1294,7 +1374,12 @@ Currently unsuported</strong></p>
                   <td class="param-desc-col"><p>Deconverted TinkerGraph</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -1329,7 +1414,12 @@ Currently unsuported</strong></p>
                   <td class="param-desc-col"><p>Deconverted Tree</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -1399,7 +1489,12 @@ Currently unsuported</strong></p>
                   <td class="param-desc-col"><p>Deconverted Vertex</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -1434,7 +1529,12 @@ Currently unsuported</strong></p>
                   <td class="param-desc-col"><p>Deconverted VertexProperty</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -1527,7 +1627,12 @@ This will be deprecated with TP3 Gremlin-server</strong></p>
                   <td class="param-desc-col"><p>Length of generated string</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 
@@ -1562,7 +1667,12 @@ This will be deprecated with TP3 Gremlin-server</strong></p>
                   <td class="param-desc-col"><p>Unserialized message</p>
 </td>
                 </tr>
-                                    </table>
+                                        <tr>
+                  <th class="param-name-col">throws</th>
+                  <td class="param-type-col"><a href="brightzone-gremlindriver-internalexception.html">Brightzone\GremlinDriver\InternalException</a></td>
+                  <td class="param-desc-col"></td>
+                </tr>
+                        </table>
 
 <!--	-->
 </div>
@@ -1604,7 +1714,7 @@ This will be deprecated with TP3 Gremlin-server</strong></p>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Sat, 21 Apr 2018 03:16:20 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Mon, 21 Jan 2019 23:37:50 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script>jQuery(function ($) {

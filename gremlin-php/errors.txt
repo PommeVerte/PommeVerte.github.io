@@ -9,33 +9,40 @@ Array
 
     [1] => Array
         (
+            [line] => 75
+            [file] => /home/travis/build/PommeVerte/gremlin-php/src/Serializers/Gson3.php
+            [message] => Undefined parameter documented:  in serialize().
+        )
+
+    [2] => Array
+        (
             [line] => 33
             [file] => /home/travis/build/PommeVerte/gremlin-php/src/Serializers/Json.php
             [message] => Undefined parameter documented:  in serialize().
         )
 
-    [2] => Array
+    [3] => Array
         (
             [line] => 23
             [file] => /home/travis/build/PommeVerte/gremlin-php/src/Serializers/SerializerInterface.php
             [message] => Undefined parameter documented:  in serialize().
         )
 
-    [3] => Array
+    [4] => Array
         (
             [line] => 73
             [file] => src/Serializers/Gson3.php
             [message] => Undefined parameter documented:  in serialize().
         )
 
-    [4] => Array
+    [5] => Array
         (
             [line] => 33
             [file] => src/Serializers/Json.php
             [message] => Undefined parameter documented:  in serialize().
         )
 
-    [5] => Array
+    [6] => Array
         (
             [line] => 23
             [file] => src/Serializers/SerializerInterface.php
