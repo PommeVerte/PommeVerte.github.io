@@ -459,13 +459,13 @@ function Person(e, p) {
     }
 
     if (this.Class == "") {
-        if (this.name.indexOf("에기") > -1 || this.name.indexOf("카벙클") > -1 || this.name.indexOf("데미바하무트") > -1 || this.name.indexOf("Egi") > -1 || this.name.indexOf("Demi-Pheonix") || this.name.indexOf("Demi-Bahamut") > -1 || this.name.indexOf("Carbuncle") > -1 || this.name.indexOf("Karfunkel") > -1 || this.name.indexOf("エギ") > -1 || this.name.indexOf("カーバンクル") > -1 || this.name.indexOf("石兽") > -1 || this.name.indexOf("之灵") > -1 || this.name.indexOf("亚灵神巴哈姆特") > -1) {
+        if (this.name.indexOf("에기") > -1 || this.name.indexOf("카벙클") > -1 || this.name.indexOf("데미바하무트") > -1 || this.name.indexOf("Egi") > -1 || this.name.indexOf("Demi-Pheonix") > -1 || this.name.indexOf("Demi-Bahamut") > -1 || this.name.indexOf("Carbuncle") > -1 || this.name.indexOf("Karfunkel") > -1 || this.name.indexOf("エギ") > -1 || this.name.indexOf("カーバンクル") > -1 || this.name.indexOf("デミ・フェニックス") > -1 || this.name.indexOf("石兽") > -1 || this.name.indexOf("之灵") > -1 || this.name.indexOf("亚灵神巴哈姆特") > -1) {
             this.Job = "AVA";
             this.Class = "SMN";
             this.isPet = true;
             this.petType = "Egi"
         }
-        if (this.name.indexOf("요정") > -1 || this.name.indexOf("Eos") > -1 || this.name.indexOf("Seraph") || this.name.indexOf("Selene") > -1 || this.name.indexOf("フェアリー") > -1 || this.name.indexOf("小仙女") > -1) {
+        if (this.name.indexOf("요정") > -1 || this.name.indexOf("Eos") > -1 || this.name.indexOf("Seraph") > -1 || this.name.indexOf("Selene") > -1 || this.name.indexOf("フェアリー") > -1 ||this.name.indexOf("セラフィム") > -1 || this.name.indexOf("小仙女") > -1) {
             this.Job = "AVA";
             this.Class = "SCH";
             this.isPet = true;
