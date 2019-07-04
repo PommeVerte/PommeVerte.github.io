@@ -473,11 +473,31 @@ function Person(e, p) {
             this.petType = "Fairy"
         }
         if (this.name.indexOf("자동포탑") > -1 || 
-this.name.indexOf("Rook Autoturret") > -1 || this.name.indexOf("Automaton Queen") > -1 || this.name.indexOf("Autoturret") > -1 || this.name.indexOf("オートタレット") > -1 || this.name.indexOf("Selbstschuss-Gyrocopter") > -1 || this.name.indexOf("Auto-tourelle") > -1 || this.name.indexOf("式浮空炮塔") > -1) {
+this.name.indexOf("Rook Autoturret") > -1 || this.name.indexOf("オートタレット・ルーク") > -1 || this.name.indexOf("Automaton Queen") > -1 || this.name.indexOf("クイーン・ローラーダッシュ") > -1|| this.name.indexOf("Autoturret") > -1 || this.name.indexOf("オートタレット") > -1 || this.name.indexOf("Selbstschuss-Gyrocopter") > -1 || this.name.indexOf("Auto-tourelle") > -1 || this.name.indexOf("式浮空炮塔") > -1) {
             this.Job = "AVA";
             this.Class = "MCH";
             this.isPet = true;
             this.petType = "AutoTurret"
+        }
+        /*if (this.name.indexOf("자동포탑") > -1 || 
+this.name.indexOf("Bushin") > -1 ) {
+            this.Job = "AVA";
+            this.Class = "NIN";
+            this.isPet = true;
+            this.petType = "AutoTurret"
+        }
+        if (this.name.indexOf("英雄の影身") > -1 || 
+this.name.indexOf("Living Shadow") > -1) {
+            this.Job = "AVA";
+            this.Class = "DRK";
+            this.isPet = true;
+            this.petType = "AutoTurret"
+        }*/
+		if (this.name.indexOf("Earthly Star") > -1) {
+            this.Job = "AVA";
+            this.Class = "AST";
+            this.isPet = true;
+            this.petType = "Star"
         }
         if (this.name.toUpperCase().indexOf("LIMIT BREAK") > -1 || this.name.indexOf("リミット") > -1) {
             this.Job = "LMB";
