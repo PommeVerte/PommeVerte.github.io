@@ -4,12 +4,13 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="en" />
-        <link href="./assets/c213e6eb/css/bootstrap.css" rel="stylesheet">
-<link href="./assets/28e584d9/solarized_light.css" rel="stylesheet">
-<link href="./assets/dbf8a060/style.css" rel="stylesheet">
-<script src="./assets/208765ed/jquery.js"></script>
-<script src="./assets/c213e6eb/js/bootstrap.js"></script>
-<script src="./assets/8cb82228/jssearch.js"></script>    <title>Message, Brightzone\GremlinDriver\Message - Yii Framework 2.0 API Documentation</title>
+        
+<link href="./assets/c1133796/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/31a886c7/solarized_light.css" rel="stylesheet">
+<link href="./assets/5180768/style.css" rel="stylesheet">
+<script src="./assets/9affef/jquery.js"></script>
+<script src="./assets/c1133796/js/bootstrap.js"></script>
+<script src="./assets/46d47468/jssearch.js"></script>    <title>Message, Brightzone\GremlinDriver\Message - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
@@ -61,16 +62,16 @@
     <p><strong>Gremlin-server PHP Driver client Messages class
 Builds and parses binary messages for communication with Gremlin-server
 Use example:</strong></p>
-    <pre><code class="hljs php"><span class="hljs-variable">$message</span> = <span class="hljs-keyword">new</span> Message;
-<span class="hljs-variable">$message</span>-&gt;gremlin = <span class="hljs-string">'g.V'</span>;
-<span class="hljs-variable">$message</span>-&gt;op = <span class="hljs-string">'eval'</span>;
-<span class="hljs-variable">$message</span>-&gt;processor = <span class="hljs-string">''</span>;
-<span class="hljs-variable">$message</span>-&gt;setArguments([<span class="hljs-string">'language'</span>=&gt;<span class="hljs-string">'gremlin-groovy'</span>]);
-<span class="hljs-variable">$message</span>-&gt;registerSerializer(<span class="hljs-string">'\Brightzone\GremlinDriver\Serializers\Json'</span>);
+    <pre><code class="hljs php">$message = <span class="hljs-keyword">new</span> Message;
+$message-&gt;gremlin = <span class="hljs-string">'g.V'</span>;
+$message-&gt;op = <span class="hljs-string">'eval'</span>;
+$message-&gt;processor = <span class="hljs-string">''</span>;
+$message-&gt;setArguments([<span class="hljs-string">'language'</span>=&gt;<span class="hljs-string">'gremlin-groovy'</span>]);
+$message-&gt;registerSerializer(<span class="hljs-string">'\Brightzone\GremlinDriver\Serializers\Json'</span>);
 <span class="hljs-comment">// etc ...</span>
-<span class="hljs-variable">$db</span> = <span class="hljs-keyword">new</span> Connection;
-<span class="hljs-variable">$db</span>-&gt;open();
-<span class="hljs-variable">$db</span>-&gt;send(<span class="hljs-variable">$message</span>);
+$db = <span class="hljs-keyword">new</span> Connection;
+$db-&gt;open();
+$db-&gt;send($message);
 </code></pre>
 
     </div>
@@ -94,13 +95,13 @@ Use example:</strong></p>
 </tr>
         <tr id="$args">
         <td><a href="brightzone-gremlindriver-message.html#$args-detail">$args</a></td>
-        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td><a href="https://www.php.net/language.types.array">array</a></td>
         <td>Args of the message</td>
         <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
     </tr>
             <tr id="$configuration">
         <td><a href="brightzone-gremlindriver-message.html#$configuration-detail">$configuration</a></td>
-        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td><a href="https://www.php.net/language.types.array">array</a></td>
         <td>Basic message configuration
  ie: op,processor,requestId, etc.</td>
         <td><a href="brightzone-gremlindriver-message.html">Brightzone\GremlinDriver\Message</a></td>
@@ -211,7 +212,7 @@ This will replace existing entries.</td>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-message.html#$args-detail">$args</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-message.html#$args-detail">$args</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
 
 
     <div class="detail-header h3" id="$configuration-detail">
@@ -230,7 +231,7 @@ This will replace existing entries.</td>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-message.html#$configuration-detail">$configuration</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
+    <div class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-message.html#$configuration-detail">$configuration</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;[]</span></div>
 
 </div>
 <h2>Method Details</h2>
@@ -278,10 +279,10 @@ This will replace existing entries.</td>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-message.html#__get()-detail">__get</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-message.html#__get()-detail">__get</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
                   <td class="param-desc-col"><p>Name of the variable you want to get</p>
 </td>
                 </tr>
@@ -312,10 +313,10 @@ This will replace existing entries.</td>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-message.html#__isset()-detail">__isset</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="brightzone-gremlindriver-message.html#__isset()-detail">__isset</a></strong> ( <span style="color: #0000BB">$name</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
                   <td class="param-desc-col"><p>Name of the variable you want to check</p>
 </td>
                 </tr>
@@ -344,13 +345,13 @@ This will replace existing entries.</td>
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-message.html#__set()-detail">__set</a></strong> ( <span style="color: #0000BB">$name</span>, <span style="color: #0000BB">$value</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$name</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
                   <td class="param-desc-col"><p>Name of the variable you want to set</p>
 </td>
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$value</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
                   <td class="param-desc-col"><p>Value of the variable you want to set</p>
 </td>
                 </tr>
@@ -379,7 +380,7 @@ This will replace existing entries.</td>
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-message.html#bindValue()-detail">bindValue</a></strong> ( <span style="color: #0000BB">$bind</span>, <span style="color: #0000BB">$value</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$bind</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
                   <td class="param-desc-col"><p>The binding name</p>
 </td>
                 </tr>
@@ -411,10 +412,10 @@ This will replace existing entries.</td>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-message.html#buildMessage()-detail">buildMessage</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-message.html#buildMessage()-detail">buildMessage</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
                   <td class="param-desc-col"><p>Returns binary data to be packed and sent to socket</p>
 </td>
                 </tr>
@@ -468,10 +469,10 @@ This will replace existing entries.</td>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-message.html#createUuid()-detail">createUuid</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.string">string</a></span> <strong><a href="brightzone-gremlindriver-message.html#createUuid()-detail">createUuid</a></strong> ( )</td></tr>
                                                 <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
                   <td class="param-desc-col"><p>The UUID</p>
 </td>
                 </tr>
@@ -500,7 +501,7 @@ This will replace existing entries.</td>
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="brightzone-gremlindriver-serializers-serializerinterface.html">Brightzone\GremlinDriver\Serializers\SerializerInterface</a></span> <strong><a href="brightzone-gremlindriver-message.html#getSerializer()-detail">getSerializer</a></strong> ( <span style="color: #0000BB">$mimeType&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$mimeType</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
                   <td class="param-desc-col"><p>The mimeType of the serializer you want to retrieve</p>
 </td>
                 </tr>
@@ -538,22 +539,22 @@ This will replace existing entries.</td>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-message.html#parse()-detail">parse</a></strong> ( <span style="color: #0000BB">$payload</span>, <span style="color: #0000BB">$isBinary</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="https://www.php.net/language.types.array">array</a></span> <strong><a href="brightzone-gremlindriver-message.html#parse()-detail">parse</a></strong> ( <span style="color: #0000BB">$payload</span>, <span style="color: #0000BB">$isBinary</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$payload</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.string">string</a></td>
                   <td class="param-desc-col"><p>Payload from the server response</p>
 </td>
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$isBinary</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>Whether we should expect binary data (TRUE) or plein text (FALSE)</p>
 </td>
                 </tr>
                                         <tr>
                   <th class="param-name-col">return</th>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
                   <td class="param-desc-col"><p>Array containing all results</p>
 </td>
                 </tr>
@@ -588,7 +589,7 @@ This will replace existing entries.</td>
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$default</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.boolean">boolean</a></td>
                   <td class="param-desc-col"><p>Whether or not to use this serializer as the default one</p>
 </td>
                 </tr>
@@ -623,7 +624,7 @@ This will replace existing entries.</strong></p>
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-message.html#setArguments()-detail">setArguments</a></strong> ( <span style="color: #0000BB">$array</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$array</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
                   <td class="param-desc-col"><p>Collection of arguments</p>
 </td>
                 </tr>
@@ -669,7 +670,7 @@ This will replace existing entries.</strong></p>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 21 Jan 2019 23:44:33 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Sat, 21 Nov 2020 16:30:26 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script>jQuery(function ($) {

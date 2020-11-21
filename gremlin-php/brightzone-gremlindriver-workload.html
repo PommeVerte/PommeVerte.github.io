@@ -4,12 +4,13 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="language" content="en" />
-        <link href="./assets/c213e6eb/css/bootstrap.css" rel="stylesheet">
-<link href="./assets/28e584d9/solarized_light.css" rel="stylesheet">
-<link href="./assets/dbf8a060/style.css" rel="stylesheet">
-<script src="./assets/208765ed/jquery.js"></script>
-<script src="./assets/c213e6eb/js/bootstrap.js"></script>
-<script src="./assets/8cb82228/jssearch.js"></script>    <title>Workload, Brightzone\GremlinDriver\Workload - Yii Framework 2.0 API Documentation</title>
+        
+<link href="./assets/c1133796/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/31a886c7/solarized_light.css" rel="stylesheet">
+<link href="./assets/5180768/style.css" rel="stylesheet">
+<script src="./assets/9affef/jquery.js"></script>
+<script src="./assets/c1133796/js/bootstrap.js"></script>
+<script src="./assets/46d47468/jssearch.js"></script>    <title>Workload, Brightzone\GremlinDriver\Workload - Yii Framework 2.0 API Documentation</title>
 </head>
 <body>
 
@@ -61,13 +62,13 @@
     <p><strong>Gremlin-server PHP Driver client Workload class</strong></p>
     <p>Workload class will store some executable code and run it against the database.
 It also allows for fail-retry strategies in the event of concurrency errors</p>
-<pre><code class="hljs php"><span class="hljs-variable">$workload</span> = <span class="hljs-keyword">new</span> Workload(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(&amp;<span class="hljs-variable">$db</span>, <span class="hljs-variable">$msg</span>, <span class="hljs-variable">$processor</span>, <span class="hljs-variable">$op</span>, <span class="hljs-variable">$args</span>)</span></span>{
-         <span class="hljs-keyword">return</span> <span class="hljs-variable">$db</span>-&gt;send(<span class="hljs-variable">$msg</span>, <span class="hljs-variable">$processor</span>, <span class="hljs-variable">$op</span>, <span class="hljs-variable">$args</span>);
+<pre><code class="hljs php">$workload = <span class="hljs-keyword">new</span> Workload(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(&amp;$db, $msg, $processor, $op, $args)</span></span>{
+         <span class="hljs-keyword">return</span> $db-&gt;send($msg, $processor, $op, $args);
      },
-     [&amp;<span class="hljs-variable">$this</span>, <span class="hljs-variable">$msg</span>, <span class="hljs-variable">$processor</span>, <span class="hljs-variable">$op</span>, <span class="hljs-variable">$args</span>]
+     [&amp;<span class="hljs-keyword">$this</span>, $msg, $processor, $op, $args]
 );
 
-<span class="hljs-variable">$response</span> = <span class="hljs-variable">$workload</span>-&gt;linearRetry(<span class="hljs-variable">$this</span>-&gt;retryAttempts);
+$response = $workload-&gt;linearRetry(<span class="hljs-keyword">$this</span>-&gt;retryAttempts);
 </code></pre>
 
     </div>
@@ -91,7 +92,7 @@ It also allows for fail-retry strategies in the event of concurrency errors</p>
 </tr>
         <tr id="$callback">
         <td><a href="brightzone-gremlindriver-workload.html#$callback-detail">$callback</a></td>
-        <td><a href="http://www.php.net/language.types.callable">callable</a></td>
+        <td><a href="https://www.php.net/language.types.callable">callable</a></td>
         <td>The callback code to be executed
 Bellow is a common example:
 ~~~
@@ -102,7 +103,7 @@ It must return something other than void.</td>
     </tr>
             <tr id="$params">
         <td><a href="brightzone-gremlindriver-workload.html#$params-detail">$params</a></td>
-        <td><a href="http://www.php.net/language.types.array">array</a></td>
+        <td><a href="https://www.php.net/language.types.array">array</a></td>
         <td>Paramteres required for the workload
 
 Ideas of params would be :
@@ -173,7 +174,7 @@ It must return something other than void. (the desired result)</p>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.callable">callable</a></span> <a href="brightzone-gremlindriver-workload.html#$callback-detail">$callback</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="https://www.php.net/language.types.callable">callable</a></span> <a href="brightzone-gremlindriver-workload.html#$callback-detail">$callback</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
 
 
     <div class="detail-header h3" id="$params-detail">
@@ -199,7 +200,7 @@ It must return something other than void. (the desired result)</p>
 
             </div>
 
-    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-workload.html#$params-detail">$params</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
+    <div class="signature"><span class="signature-defs">protected</span> <span class="signature-type"><a href="https://www.php.net/language.types.array">array</a></span> <a href="brightzone-gremlindriver-workload.html#$params-detail">$params</a> <span style="color: #0000BB"></span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span></div>
 
 </div>
 <h2>Method Details</h2>
@@ -224,16 +225,16 @@ It must return something other than void. (the desired result)</p>
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-workload.html#__construct()-detail">__construct</a></strong> ( <span class="signature-type"><a href="http://www.php.net/language.types.callable">callable</a></span> <span style="color: #0000BB">$callback</span>, <span style="color: #0000BB">$params</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="brightzone-gremlindriver-workload.html#__construct()-detail">__construct</a></strong> ( <span class="signature-type"><a href="https://www.php.net/language.types.callable">callable</a></span> <span style="color: #0000BB">$callback</span>, <span style="color: #0000BB">$params</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$callback</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.callable">callable</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.callable">callable</a></td>
                   <td class="param-desc-col"><p>The portion of code to execute within the scope of this workload</p>
 </td>
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.array">array</a></td>
                   <td class="param-desc-col"><p>The paramters to pass to the callback.</p>
 </td>
                 </tr>
@@ -262,7 +263,7 @@ It must return something other than void. (the desired result)</p>
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="brightzone-gremlindriver-workload.html#linearRetry()-detail">linearRetry</a></strong> ( <span style="color: #0000BB">$attempts</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$attempts</span></td>
-                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-type-col"><a href="https://www.php.net/language.types.integer">integer</a></td>
                   <td class="param-desc-col"><p>The number of times to retry</p>
 </td>
                 </tr>
@@ -319,7 +320,7 @@ It must return something other than void. (the desired result)</p>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 21 Jan 2019 23:44:33 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Sat, 21 Nov 2020 16:30:26 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script>jQuery(function ($) {
